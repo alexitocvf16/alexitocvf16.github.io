@@ -1,0 +1,3195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ================================================================= -->
+    <!-- ================================================================= -->
+    <!-- TÍTULO DE LA PESTAÑA Y METADATOS SEO -->
+    <!-- Alejandro Sánchez Moreno - Administrador de Sistemas y Ciberseguridad -->
+    <!-- ================================================================= -->
+    <title>Alejandro Sánchez Moreno | Administrador de Sistemas & Técnico de Ciberseguridad</title>
+    <meta name="description"
+        content="Portfolio profesional de Alejandro Sánchez Moreno - Administrador de Sistemas y Técnico de Ciberseguridad. Estudiante de 2º de ASIR con certificaciones oficiales eJPTv2, Cisco CCST y Microsoft SC-900.">
+    <meta name="keywords"
+        content="Alejandro Sánchez Moreno, Ciberseguridad, Administrador de Sistemas, ASIR, eJPTv2, Cisco CCST, SC-900, Azure AI, IT Specialist, Pentesting, Ethical Hacking, Linux, Windows Server, Active Directory, Toledo, Portfolio">
+    <meta name="author" content="Alejandro Sánchez Moreno">
+
+    <!-- Open Graph para compartir en LinkedIn / Twitter / WhatsApp -->
+    <meta property="og:title" content="Alejandro Sánchez Moreno | Administrador de Sistemas & Ténico de Ciberseguridad">
+    <meta property="og:description"
+        content="Portfolio profesional de Alejandro Sánchez Moreno: Proyectos de hacking ético, administración de sistemas Windows Server y Linux, y certificaciones oficiales.">
+    <meta property="og:type" content="website">
+
+    <!-- Fuentes de Google: JetBrains Mono (para el toque terminal/hacker) e Inter (para lectura limpia) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Colores de Fondo (Dark Mode Profundo) */
+            --bg-base: #06090e;
+            /* Fondo principal de la página */
+            --bg-surface: #0c111c;
+            /* Fondo de contenedores y cards */
+            --bg-surface-alt: #131b2e;
+            /* Fondo alternativo o hover de cards */
+            --bg-terminal: #070b12;
+            /* Fondo interior de la terminal */
+
+            /* Colores de Acento Cibernéticos */
+            --neon-green: #00ff88;
+            /* Verde Matrix / Terminal clásica */
+            --neon-cyan: #00f0ff;
+            /* Azul cian cibernético */
+            --neon-red: #ff3366;
+            /* Rojo alerta / Red Team */
+            --neon-purple: #a855f7;
+            /* Púrpura eléctrico */
+
+            /* Colores de Texto */
+            --text-main: #f1f5f9;
+            /* Texto principal brillante */
+            --text-secondary: #94a3b8;
+            /* Texto descriptivo gris suave */
+            --text-muted: #475569;
+            /* Texto atenuado / comentarios */
+
+            /* Bordes y Sombras */
+            --border-subtle: rgba(0, 240, 255, 0.12);
+            --border-glow: rgba(0, 255, 136, 0.4);
+            --glow-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+
+            /* Tipografías */
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+            /* Transiciones */
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* --- RESET Y ESTILOS BASE --- */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            color-scheme: dark;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.65;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Canvas de Fondo (Partículas cibernéticas) */
+        #cyber-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        /* Enlaces */
+        a {
+            color: var(--neon-cyan);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--neon-green);
+            text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+        }
+
+        /* Contenedor universal */
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Secciones */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        /* Encabezados de Sección */
+        .section-header {
+            margin-bottom: 3.5rem;
+            text-align: left;
+        }
+
+        .section-tag {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--neon-green);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-family: var(--font-mono);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--text-main);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border-subtle), transparent);
+            margin-left: 1rem;
+        }
+
+        /* ================================================================= */
+        /* NAVBAR / MENÚ DE NAVEGACIÓN                                       */
+        /* ================================================================= */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(6, 9, 14, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 0.9rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-logo .prompt-char {
+            color: var(--neon-green);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .nav-links a span.nav-num {
+            color: var(--neon-green);
+            font-size: 0.75rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        /* Indicador de Estado en el Nav */
+        .status-pill {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 0.3rem 0.75rem;
+            border-radius: 9999px;
+            background: rgba(0, 255, 136, 0.08);
+            border: 1px solid rgba(0, 255, 136, 0.25);
+            color: var(--neon-green);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--neon-green);
+            box-shadow: 0 0 8px var(--neon-green);
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.85);
+            }
+        }
+
+        /* Botón Móvil Hamburguesa */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            font-size: 1.3rem;
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* ================================================================= */
+        /* HERO SECTION                                                      */
+        /* ================================================================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 5rem;
+            position: relative;
+        }
+
+        .hero-terminal-pill {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--neon-cyan);
+            background: rgba(0, 240, 255, 0.06);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            padding: 0.35rem 0.9rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-mono);
+            font-size: clamp(2.3rem, 6.5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            position: relative;
+        }
+
+        .hero-title .glitch-text {
+            color: var(--text-main);
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Efecto Glitch Suave */
+        .hero-title:hover .glitch-text {
+            animation: glitch-anim 0.35s ease infinite alternate;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                transform: translate(0);
+                text-shadow: -2px 0 var(--neon-red), 2px 0 var(--neon-cyan);
+            }
+
+            50% {
+                transform: translate(-1px, 1px);
+                text-shadow: 2px 0 var(--neon-red), -2px 0 var(--neon-cyan);
+            }
+
+            100% {
+                transform: translate(1px, -1px);
+                text-shadow: -1px 0 var(--neon-red), 1px 0 var(--neon-cyan);
+            }
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-mono);
+            font-size: clamp(1.2rem, 3vw, 1.9rem);
+            color: var(--neon-green);
+            margin-bottom: 1.5rem;
+            min-height: 2.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+        }
+
+        .typewriter-prefix {
+            color: var(--text-muted);
+            margin-right: 0.4rem;
+        }
+
+        .cursor-blink {
+            display: inline-block;
+            width: 10px;
+            height: 1.3em;
+            background-color: var(--neon-green);
+            margin-left: 4px;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+
+            0%,
+            49% {
+                opacity: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .hero-desc {
+            max-width: 650px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        /* Botones Cibernéticos */
+        .btn {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.85rem 1.6rem;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: transparent;
+            color: var(--neon-green);
+            border-color: var(--neon-green);
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.15);
+        }
+
+        .btn-primary:hover {
+            background-color: rgba(0, 255, 136, 0.12);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+            transform: translateY(-2px);
+            color: #ffffff;
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.03);
+            color: var(--neon-cyan);
+            border-color: rgba(0, 240, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(0, 240, 255, 0.1);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+            transform: translateY(-2px);
+            color: #ffffff;
+        }
+
+        /* Métricas / Quick Stats en Hero */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            margin-top: 4.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .stat-item {
+            background: rgba(12, 17, 28, 0.5);
+            border: 1px solid var(--border-subtle);
+            padding: 1.2rem;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-3px);
+        }
+
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--neon-green);
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ================================================================= */
+        /* TERMINAL / SOBRE MÍ                                               */
+        /* ================================================================= */
+        .terminal-window {
+            background: var(--bg-terminal);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 240, 255, 0.08);
+            overflow: hidden;
+            font-family: var(--font-mono);
+        }
+
+        .terminal-header {
+            background: #0a0f19;
+            padding: 0.75rem 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot-red {
+            background: #ff5f56;
+        }
+
+        .dot-yellow {
+            background: #ffbd2e;
+        }
+
+        .dot-green {
+            background: #27c93f;
+        }
+
+        .terminal-title {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+        }
+
+        .terminal-body {
+            padding: 1.8rem;
+            font-size: 0.95rem;
+            color: #d1d5db;
+            line-height: 1.7;
+        }
+
+        .terminal-line {
+            margin-bottom: 1rem;
+        }
+
+        .terminal-prompt {
+            color: var(--neon-cyan);
+            font-weight: bold;
+        }
+
+        .terminal-cmd {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .terminal-output {
+            padding-left: 1.2rem;
+            color: var(--text-secondary);
+            border-left: 2px solid rgba(0, 240, 255, 0.2);
+            margin: 0.6rem 0 1.5rem 0.4rem;
+        }
+
+        .terminal-output p {
+            margin-bottom: 0.6rem;
+        }
+
+        .terminal-output strong {
+            color: var(--neon-green);
+        }
+
+        /* Consola Interactiva al final del Terminal */
+        .terminal-interactive {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.6rem 0.9rem;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .terminal-interactive input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--neon-green);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        .terminal-help-hint {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* ================================================================= */
+        /* SKILLS SECTION (HABILIDADES TÉCNICAS)                             */
+        /* ================================================================= */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1.8rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+            transform: translateX(-100%);
+            transition: 0.6s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 240, 255, 0.35);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .skill-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-icon {
+            font-size: 1.6rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 6px;
+            background: rgba(0, 240, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .skill-category-title {
+            font-family: var(--font-mono);
+            font-size: 1.15rem;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .skill-item-info {
+            display: flex;
+            justify-content: space-between;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .skill-progress-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Colores dinámicos para barras de skills */
+        .fill-green {
+            background: linear-gradient(90deg, #00bd68, var(--neon-green));
+        }
+
+        .fill-cyan {
+            background: linear-gradient(90deg, #0099ff, var(--neon-cyan));
+        }
+
+        .fill-red {
+            background: linear-gradient(90deg, #d91b42, var(--neon-red));
+        }
+
+        .fill-purple {
+            background: linear-gradient(90deg, #7c3aed, var(--neon-purple));
+        }
+
+        /* Tags o Chips de Herramientas */
+        .tools-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .tool-badge {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .tool-badge:hover {
+            border-color: var(--neon-green);
+            color: var(--neon-green);
+            background: rgba(0, 255, 136, 0.06);
+        }
+
+        /* ================================================================= */
+        /* PROYECTOS SECTION (PORTFOLIO GRID)                                */
+        /* ================================================================= */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-glow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), var(--glow-shadow);
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .project-type-tag {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            padding: 0.25rem 0.6rem;
+            border-radius: 3px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-red {
+            background: rgba(255, 51, 102, 0.12);
+            color: var(--neon-red);
+            border: 1px solid rgba(255, 51, 102, 0.3);
+        }
+
+        .tag-blue {
+            background: rgba(0, 240, 255, 0.12);
+            color: var(--neon-cyan);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+
+        .tag-green {
+            background: rgba(0, 255, 136, 0.12);
+            color: var(--neon-green);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .tag-purple {
+            background: rgba(168, 85, 247, 0.12);
+            color: var(--neon-purple);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .project-links a {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .project-links a:hover {
+            color: var(--neon-green);
+        }
+
+        .project-title {
+            font-family: var(--font-mono);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.8rem;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-pill {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--neon-cyan);
+            background: rgba(0, 240, 255, 0.05);
+            padding: 0.2rem 0.55rem;
+            border-radius: 3px;
+        }
+
+        .project-footer-link {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--neon-green);
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* ================================================================= */
+        /* EXPERIENCIA & EDUCACIÓN (TIMELINE)                                */
+        /* ================================================================= */
+        .timeline {
+            position: relative;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        /* Línea vertical central/lateral */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            bottom: 5px;
+            left: 20px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--neon-green), var(--neon-cyan), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 3.5rem;
+        }
+
+        .timeline-node {
+            position: absolute;
+            left: 12px;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--bg-base);
+            border: 3px solid var(--neon-green);
+            box-shadow: 0 0 10px var(--neon-green);
+            z-index: 1;
+        }
+
+        .timeline-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            border-color: var(--border-glow);
+            transform: translateX(4px);
+        }
+
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--neon-cyan);
+            margin-bottom: 0.4rem;
+            display: inline-block;
+        }
+
+        .timeline-role {
+            font-family: var(--font-mono);
+            font-size: 1.25rem;
+            color: var(--text-main);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-company {
+            color: var(--neon-green);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .timeline-details {
+            list-style: none;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+        }
+
+        .timeline-details li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-details li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--neon-green);
+            font-family: var(--font-mono);
+        }
+
+        /* ================================================================= */
+        /* FOOTER / CONTACTO                                                 */
+        /* ================================================================= */
+        .contact-card {
+            background: linear-gradient(145deg, rgba(12, 17, 28, 0.9), rgba(6, 9, 14, 0.95));
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            margin-bottom: 4rem;
+        }
+
+        .contact-title {
+            font-family: var(--font-mono);
+            font-size: clamp(1.8rem, 4vw, 2.3rem);
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .contact-desc {
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* PGP Fingerprint Box */
+        .pgp-box {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            gap: 0.8rem;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .pgp-box span.pgp-key {
+            color: var(--neon-green);
+        }
+
+        .copy-btn {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-main);
+            padding: 0.25rem 0.6rem;
+            border-radius: 3px;
+            cursor: pointer;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+        }
+
+        /* Footer Inferior */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem 0;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-secondary);
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+
+        .footer-socials a:hover {
+            color: var(--neon-green);
+            transform: translateY(-2px);
+        }
+
+        /* ================================================================= */
+        /* COMPONENTES EXTRA: HERO AVATAR, CHIPS & CERTIFICACIONES           */
+        /* ================================================================= */
+        .hero-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3.5rem;
+        }
+
+        .hero-main-content {
+            flex: 1;
+        }
+
+        .hero-avatar-container {
+            position: relative;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-avatar-frame {
+            position: relative;
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(135deg, var(--neon-green), var(--neon-cyan), rgba(0, 240, 255, 0.2));
+            box-shadow: 0 0 35px rgba(0, 255, 136, 0.25), 0 0 15px rgba(0, 240, 255, 0.2);
+            animation: avatar-pulse 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes avatar-pulse {
+            0% {
+                box-shadow: 0 0 25px rgba(0, 255, 136, 0.2), 0 0 10px rgba(0, 240, 255, 0.15);
+            }
+
+            100% {
+                box-shadow: 0 0 45px rgba(0, 255, 136, 0.4), 0 0 25px rgba(0, 240, 255, 0.3);
+            }
+        }
+
+        .hero-avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            background-color: var(--bg-surface);
+            border: 3px solid var(--bg-base);
+        }
+
+        .avatar-badge-status {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: var(--bg-surface);
+            border: 1.5px solid var(--neon-green);
+            color: var(--neon-green);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Chips informativos rápidos en Hero */
+        .hero-meta-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .meta-chip {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.35rem 0.8rem;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .meta-chip strong {
+            color: var(--neon-cyan);
+        }
+
+        /* Certificaciones Grid y Cards */
+        .certs-container {
+            margin-bottom: 3.5rem;
+        }
+
+        .certs-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.8rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .certs-header-bar .certs-subtitle {
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .certs-external-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .certs-external-btn {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 4px;
+            background: rgba(0, 240, 255, 0.06);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            color: var(--neon-cyan);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition);
+        }
+
+        .certs-external-btn:hover {
+            background: rgba(0, 240, 255, 0.15);
+            border-color: var(--neon-cyan);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--neon-cyan);
+            transition: var(--transition);
+        }
+
+        .cert-card.cert-highlight::before {
+            background: var(--neon-green);
+        }
+
+        .cert-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), var(--glow-shadow);
+        }
+
+        .cert-issuer {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--neon-cyan);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cert-issuer-badge {
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .cert-title {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.8rem;
+            line-height: 1.35;
+        }
+
+        .cert-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .cert-verify-link {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--neon-green);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-weight: 600;
+        }
+
+        .cert-verify-link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+        }
+
+        /* Banner de Repositorio de Proyectos */
+        .projects-banner {
+            background: linear-gradient(135deg, rgba(12, 17, 28, 0.9), rgba(19, 27, 46, 0.9));
+            border: 1px solid var(--border-glow);
+            border-radius: 8px;
+            padding: 1.6rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.1);
+        }
+
+        .projects-banner-text h4 {
+            font-family: var(--font-mono);
+            font-size: 1.15rem;
+            color: var(--neon-green);
+            margin-bottom: 0.25rem;
+        }
+
+        .projects-banner-text p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Frase destacada inferior de proyectos */
+        .projects-cta-box {
+            margin-top: 3rem;
+            padding: 1.4rem 1.8rem;
+            background: linear-gradient(135deg, rgba(12, 17, 28, 0.85), rgba(20, 30, 50, 0.85));
+            border: 1px solid var(--border-glow);
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.08);
+        }
+
+        .projects-cta-text {
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .projects-cta-link {
+            color: var(--neon-green);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            word-break: break-all;
+            transition: var(--transition);
+        }
+
+        .projects-cta-link:hover {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+
+        /* ================================================================= */
+        /* SECCIÓN WRITEUPS & MÁQUINAS VULNERABLES                           */
+        /* ================================================================= */
+        .writeups-banner {
+            background: linear-gradient(135deg, rgba(22, 13, 26, 0.9), rgba(12, 17, 28, 0.95));
+            border: 1px solid rgba(255, 51, 102, 0.35);
+            border-radius: 8px;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            box-shadow: 0 0 30px rgba(255, 51, 102, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .writeups-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--neon-red);
+            box-shadow: 0 0 15px var(--neon-red);
+        }
+
+        .writeups-banner-content {
+            flex: 1 1 580px;
+        }
+
+        .writeups-badge {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--neon-red);
+            letter-spacing: 1.5px;
+            margin-bottom: 0.6rem;
+            display: inline-block;
+            background: rgba(255, 51, 102, 0.1);
+            padding: 0.25rem 0.65rem;
+            border-radius: 3px;
+            border: 1px solid rgba(255, 51, 102, 0.25);
+            font-weight: 600;
+        }
+
+        .writeups-title {
+            font-family: var(--font-mono);
+            font-size: 1.35rem;
+            color: var(--text-main);
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .writeups-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+
+        .writeups-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .writeups-banner-action {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .machines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .machine-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .machine-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--neon-red);
+            transition: var(--transition);
+        }
+
+        .machine-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 51, 102, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 51, 102, 0.15);
+        }
+
+        .machine-card:hover::before {
+            box-shadow: 0 0 10px var(--neon-red);
+        }
+
+        .machine-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .machine-platform {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            padding: 0.2rem 0.55rem;
+            border-radius: 3px;
+            background: rgba(255, 51, 102, 0.12);
+            color: var(--neon-red);
+            border: 1px solid rgba(255, 51, 102, 0.3);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .machine-title {
+            font-family: var(--font-mono);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.6rem;
+        }
+
+        .machine-desc {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.55;
+            margin-bottom: 1.2rem;
+        }
+
+        .machine-link {
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: var(--neon-red);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .machine-link:hover {
+            color: #fff;
+            transform: translateX(4px);
+        }
+
+        /* Información de Contacto Adicional */
+        .contact-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.4rem;
+            margin: 2.2rem 0;
+            text-align: left;
+        }
+
+        .contact-detail-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 6px;
+            padding: 1.2rem 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+            min-width: 0;
+        }
+
+        .contact-detail-icon {
+            color: var(--neon-green);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-detail-content {
+            min-width: 0;
+            overflow: hidden;
+            flex: 1 1 auto;
+        }
+
+        .contact-detail-content span {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-detail-content strong,
+        .contact-detail-content a {
+            color: var(--text-main);
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: block;
+            max-width: 100%;
+            word-break: break-all;
+            overflow-wrap: anywhere;
+            line-height: 1.4;
+        }
+
+        .contact-detail-content a:hover {
+            color: var(--neon-cyan);
+        }
+
+        .contact-buttons .btn {
+            max-width: 100%;
+            word-break: break-word;
+        }
+
+        /* ================================================================= */
+        /* RESPONSIVE DESIGN (MEDIA QUERIES)                                 */
+        /* ================================================================= */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                right: -100%;
+                width: 80%;
+                max-width: 320px;
+                height: calc(100vh - 60px);
+                background: rgba(6, 9, 14, 0.98);
+                backdrop-filter: blur(15px);
+                border-left: 1px solid var(--border-subtle);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 2.5rem 2rem;
+                gap: 1.8rem;
+                transition: 0.3s ease-in-out;
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-layout {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                text-align: center;
+            }
+
+            .hero-subtitle {
+                justify-content: center;
+            }
+
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-meta-chips {
+                justify-content: center;
+            }
+
+            .hero-avatar-frame {
+                width: 170px;
+                height: 170px;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                padding-left: 2.5rem;
+            }
+
+            .timeline-node {
+                left: 2px;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .certs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-actions .btn {
+                justify-content: center;
+            }
+
+            .projects-banner {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Canvas de fondo para efecto cibernético -->
+    <canvas id="cyber-canvas"></canvas>
+
+    <!-- ================================================================= -->
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR (NAVBAR)                             -->
+    <!-- ================================================================= -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-content">
+            <!-- LOGO / PROMPT DE USUARIO -->
+            <a href="#hero" class="nav-logo">
+                <span class="prompt-char">&gt;</span>
+                <span>alexito@grooti16:~$</span>
+                <span class="status-dot"></span>
+            </a>
+
+            <!-- ENLACES DE NAVEGACIÓN -->
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about"><span class="nav-num">01.</span>// Terminal</a></li>
+                    <li><a href="#skills"><span class="nav-num">02.</span>// Skills</a></li>
+                    <li><a href="#projects"><span class="nav-num">03.</span>// Proyectos</a></li>
+                    <li><a href="#writeups"><span class="nav-num">04.</span>// Writeups</a></li>
+                    <li><a href="#education"><span class="nav-num">05.</span>// Formación</a></li>
+                    <li><a href="#contact"><span class="nav-num">06.</span>// Contacto</a></li>
+                    <li>
+                        <!-- Estado del sistema / Disponibilidad para trabajar -->
+                        <div class="status-pill">
+                            <span class="status-dot"></span>
+                            <span>DISPONIBLE_PARA_TRABAJAR</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Botón menú hamburguesa para teléfonos -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ================================================================= -->
+        <!-- SECCIÓN 1: HERO / INICIO                                          -->
+        <!-- ================================================================= -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-layout">
+                    <div class="hero-main-content">
+                        <div class="hero-terminal-pill">
+                            [SYSTEM_SEC: LEVEL_0 // SYSADMIN &amp; SEC_OPS ACTIVE]
+                        </div>
+
+                        <h1 class="hero-title">
+                            Hola, soy <br>
+                            <span class="glitch-text">Alejandro Sánchez</span>
+                        </h1>
+
+                        <!-- Subtítulo con efecto mecanografía (Typewriter) -->
+                        <div class="hero-subtitle">
+                            <span class="typewriter-prefix">&gt;</span>
+                            <span id="typewriterText"></span>
+                            <span class="cursor-blink"></span>
+                        </div>
+
+                        <!-- Chips informativos rápidos -->
+                        <div class="hero-meta-chips">
+                            <span class="meta-chip">📍 <strong>Toledo, España</strong></span>
+                            <span class="meta-chip">🚗 <strong>Carnet B y Coche Propio</strong></span>
+                            <span class="meta-chip">🎓 <strong>2º de ASIR (Tech Hub Euroformac)</strong></span>
+                            <span class="meta-chip">⚡ <strong>Disponibilidad Inmediata</strong></span>
+                        </div>
+
+                        <p class="hero-desc">
+                            Técnico en formación en <strong>Administración de Sistemas Informáticos en Red</strong> con
+                            especial interés en <strong>ciberseguridad (preferiblemente defensiva), Inteligencia
+                                Artificial y redes</strong>. Cuento con
+                            experiencia práctica en proyectos personales de hacking ético, creación de entornos
+                            vulnerables, administración de sistemas Linux y Windows Server y proyectos de Homelab.
+                        </p>
+
+                        <!-- Botones de Acción Principal -->
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary">
+                                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                                Ver Proyectos
+                            </a>
+
+                            <a href="Curriculum.pdf" target="_blank" class="btn btn-secondary">
+                                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                                Descargar CV (PDF)
+                            </a>
+
+                            <a href="#education" class="btn btn-secondary">
+                                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                                    </path>
+                                </svg>
+                                Certificaciones
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Foto de Perfil Cibernética -->
+                    <div class="hero-avatar-container">
+                        <div class="hero-avatar-frame">
+                            <img src="profile.jpg" alt="Alejandro Sánchez Moreno" class="hero-avatar-img">
+                            <div class="avatar-badge-status">
+                                <span class="status-dot"></span>
+                                <span>ONLINE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Métricas rápidas de impacto / Estadísticas -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Certificaciones Oficiales</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">2º ASIR</div>
+                        <div class="stat-label">Tech Hub Euroformac</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">eJPTv2</div>
+                        <div class="stat-label">Junior Penetration Tester</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Movilidad (Carnet B)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">// 01. PERFIL PROFESIONAL</span>
+                    <h2 class="section-title">Terminal del Sistema</h2>
+                </div>
+
+                <!-- Ventana interactiva de terminal -->
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <div class="terminal-title">bash — alexito@sys-workstation: ~/about</div>
+                        <div></div>
+                    </div>
+
+                    <div class="terminal-body" id="terminalOutput">
+                        <!-- Comando 1: whoami -->
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">alexito@sys-workstation:~$</span>
+                            <span class="terminal-cmd">whoami</span>
+                        </div>
+                        <div class="terminal-output">
+                            <p><strong>Alejandro Sánchez Moreno</strong> | Administrador de Sistemas y Técnico de
+                                Ciberseguridad (Cursando 2º ASIR).</p>
+                            <p>Ubicación: Toledo, España | Movilidad: Carnet de conducir B y coche propio |
+                                Disponibilidad inmediata, geográfica y flexibilidad horaria.</p>
+                        </div>
+
+                        <!-- Comando 2: cat perfil_profesional.txt -->
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">alexito@sys-workstation:~$</span>
+                            <span class="terminal-cmd">cat perfil_profesional.txt</span>
+                        </div>
+                        <div class="terminal-output">
+                            <p>
+                                Técnico en formación en <strong>Administración de Sistemas Informáticos en Red</strong>
+                                con especial interés en
+                                <strong>ciberseguridad (preferiblemente defensiva), redes e Inteligencia
+                                    Artificial</strong>.
+                            </p>
+                            <p>
+                                Cuento con experiencia práctica en proyectos personales de <strong>hacking
+                                    ético</strong>,
+                                creación de entornos vulnerables y administración de sistemas <strong>Linux y Windows
+                                    Server</strong>.
+                                Me caracterizo por mi curiosidad técnica, capacidad analítica y compromiso con la mejora
+                                constante.
+                                Busco iniciar mi carrera laboral en el ámbito de la informática y ciberseguridad que
+                                tanto me apasiona.
+                            </p>
+                        </div>
+
+                        <!-- Comando 3: cat competencias_y_entornos.md -->
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">alexito@sys-workstation:~$</span>
+                            <span class="terminal-cmd">cat competencias_y_entornos.md</span>
+                        </div>
+                        <div class="terminal-output">
+                            <p><strong>🛡️ Ciberseguridad:</strong> Wireshark, Burp Suite, Splunk, herramientas de
+                                pentesting, laboratorios vulnerables, Hacking ético y Hacking de AD.</p>
+                            <p><strong>🖥️ Sistemas y Redes:</strong> Windows Server/Windows, Active Directory, Linux,
+                                Cisco Packet Tracer, VirtualBox, VMware.</p>
+                            <p><strong>☁️ Cloud & Automatización:</strong> AWS, Microsoft Azure, Microsoft Entra ID
+                                (Azure AD), Python, Docker, MySQL.</p>
+                            <p><strong>🌐 Idiomas & Datos:</strong> Inglés (Medio) | Trabajo en equipo,
+                                resolución de problemas, compromiso y aprendizaje continuo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Consola interactiva para escribir comandos adicionales -->
+                    <div style="padding: 0 1.8rem 1.8rem 1.8rem;">
+                        <div class="terminal-interactive">
+                            <span class="terminal-prompt">guest@terminal:~$</span>
+                            <input type="text" id="terminalInput"
+                                placeholder="Escribe 'help', 'skills', 'clear' o 'contact'..." autocomplete="off">
+                        </div>
+                        <div class="terminal-help-hint">
+                            💡 Tip: Puedes interactuar con la terminal ingresando comandos y presionando [Enter].
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="skills" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">// 02. ARSENAL TÉCNICO</span>
+                    <h2 class="section-title">Habilidades &amp; Conocimientos</h2>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Categoría 1: Ciberseguridad & Pentesting -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div class="skill-icon">🛡️</div>
+                            <div>
+                                <h3 class="skill-category-title">Ciberseguridad &amp; Pentesting</h3>
+                                <small style="color: var(--text-muted); font-family: var(--font-mono);">Ethical Hacking,
+                                    Análisis &amp; Defensas</small>
+                            </div>
+                        </div>
+
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-item-info">
+                                    <span>Hacking Ético &amp; Pentesting (eJPTv2)</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill fill-red" style="width: 90%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-item-info">
+                                    <span>Análisis de Tráfico de Red (Wireshark)</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill fill-red" style="width: 88%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-item-info">
+                                    <span>SIEM, Detección y Auditoría (Splunk)</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill fill-red" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tools-tags">
+                            <span class="tool-badge">Wireshark</span>
+                            <span class="tool-badge">Burp Suite</span>
+                            <span class="tool-badge">Splunk</span>
+                            <span class="tool-badge">Kali Linux</span>
+                            <span class="tool-badge">eJPTv2</span>
+                            <span class="tool-badge">Nmap / Pentest</span>
+                        </div>
+                    </div>
+
+                    <!-- Categoría 2: Sistemas Operativos & Virtualización -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div class="skill-icon">🖥️</div>
+                            <div>
+                                <h3 class="skill-category-title">Sistemas &amp; Virtualización</h3>
+                                <small style="color: var(--text-muted); font-family: var(--font-mono);">SysAdmin, Redes
+                                    &amp; Hypervisores</small>
+                            </div>
+                        </div>
+
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-item-info">
+                                    <span>Windows Server &amp; Active Directory</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill fill-cyan" style="width: 92%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-item-info">
+                                    <span>Administración de Sistemas Linux</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill fill-cyan" style="width: 90%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-item-info">
+                                    <span>Virtualización (VMware / VirtualBox)</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill fill-cyan" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tools-tags">
+                            <span class="tool-badge">Windows Server</span>
+                            <span class="tool-badge">Active Directory</span>
+                            <span class="tool-badge">Linux (Debian/Kali)</span>
+                            <span class="tool-badge">VMware</span>
+                            <span class="tool-badge">VirtualBox</span>
+                            <span class="tool-badge">Cisco Packet Tracer</span>
+                        </div>
+                    </div>
+
+                    <!-- Categoría 3: Cloud, Scripting & Bases de Datos -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div class="skill-icon">⚡</div>
+                            <div>
+                                <h3 class="skill-category-title">Cloud &amp; Automatización</h3>
+                                <small style="color: var(--text-muted); font-family: var(--font-mono);">Azure, Entra ID,
+                                    Docker &amp; Python</small>
+                            </div>
+                        </div>
+
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-item-info">
+                                    <span>Microsoft Azure &amp; Entra ID (Azure AD)</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill fill-green" style="width: 88%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-item-info">
+                                    <span>Python &amp; Automatización de Tareas</span>
+                                    <span>86%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill fill-green" style="width: 86%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-item-info">
+                                    <span>Docker, MySQL &amp; Cloud AWS</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill fill-green" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tools-tags">
+                            <span class="tool-badge">Microsoft Azure</span>
+                            <span class="tool-badge">Entra ID (Azure AD)</span>
+                            <span class="tool-badge">AWS</span>
+                            <span class="tool-badge">Python</span>
+                            <span class="tool-badge">Docker</span>
+                            <span class="tool-badge">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills y Competencias -->
+                <div
+                    style="margin-top: 2.5rem; background: rgba(12, 17, 28, 0.5); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem 2rem;">
+                    <span
+                        style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--neon-cyan); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 0.8rem;">
+                        // SOFT SKILLS &amp; COMPETENCIAS PROFESIONALES
+                    </span>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                        <span class="tool-badge"
+                            style="border-color: rgba(0, 255, 136, 0.3); color: var(--text-main);">🤝 Trabajo en
+                            equipo</span>
+                        <span class="tool-badge"
+                            style="border-color: rgba(0, 255, 136, 0.3); color: var(--text-main);">🔄 Capacidad para
+                            recibir y aplicar feedback</span>
+                        <span class="tool-badge"
+                            style="border-color: rgba(0, 255, 136, 0.3); color: var(--text-main);">🧩 Resolución
+                            metódica de problemas</span>
+                        <span class="tool-badge"
+                            style="border-color: rgba(0, 255, 136, 0.3); color: var(--text-main);">📚 Capacidad de
+                            aprendizaje continuo</span>
+                        <span class="tool-badge"
+                            style="border-color: rgba(0, 255, 136, 0.3); color: var(--text-main);">🎯 Responsabilidad y
+                            compromiso</span>
+                        <span class="tool-badge"
+                            style="border-color: rgba(0, 255, 136, 0.3); color: var(--text-main);">📈 Mentalidad de
+                            mejora continua</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="projects" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">// 03. TRABAJOS DESTACADOS</span>
+                    <h2 class="section-title">Laboratorios &amp; Proyectos</h2>
+                </div>
+
+                <!-- Banner central de GitHub Proyectos -->
+                <div class="projects-banner">
+                    <div class="projects-banner-text">
+                        <h4>📂 Repositorio Central: Proyectos-Personales</h4>
+                        <p>Colección de prácticas, entornos vulnerables, laboratorios de redes y administración de
+                            sistemas.</p>
+                    </div>
+                    <a href="https://github.com/alexitocvf16/Proyectos-Personales" target="_blank"
+                        class="btn btn-primary" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        Ver Repositorio en GitHub →
+                    </a>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- PROYECTO 1: Active Directory Hardening -->
+                    <div class="project-card">
+                        <div class="project-top">
+                            <span class="project-type-tag tag-blue">SYSADMIN &amp; CLOUD IDENTITY</span>
+                            <div class="project-links">
+                                <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Configuracion-Avanzada-Active-Directory-GPO"
+                                    target="_blank" title="Ver en GitHub">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Windows Server &amp; Active Directory (Hardening)</h3>
+                        <p class="project-desc">
+                            Instalación y configuración integral de controladores de dominio (AD DS), políticas de grupo
+                            (GPOs) para securización de puestos cliente, asignación de permisos de mínimo privilegio y
+                            sincronización de identidades con Microsoft Entra ID (Azure AD).
+                        </p>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-pill">Windows Server</span>
+                            <span class="tech-pill">Active Directory</span>
+                            <span class="tech-pill">Microsoft Entra ID</span>
+                            <span class="tech-pill">VMware</span>
+                            <span class="tech-pill">GPO</span>
+                        </div>
+
+                        <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Configuracion-Avanzada-Active-Directory-GPO"
+                            target="_blank" class="project-footer-link">
+                            Explorar Repositorio →
+                        </a>
+                    </div>
+
+                    <!-- PROYECTO 2: NAS OpenMediaVault en Raspberry Pi -->
+                    <div class="project-card">
+                        <div class="project-top">
+                            <span class="project-type-tag tag-blue">SYSADMIN &amp; STORAGE</span>
+                            <div class="project-links">
+                                <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/NAS-OpenMediaVault-RaspberryPi"
+                                    target="_blank" title="Ver en GitHub">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Servidor NAS con OpenMediaVault en Raspberry Pi 5</h3>
+                        <p class="project-desc">
+                            Transformación de una Raspberry Pi 5 en un servidor NAS de alto rendimiento para red local.
+                            Depuración del sistema base sin entorno gráfico, formateo y montaje de almacenamiento SSD en
+                            EXT4 por USB 3.0, definición de cuotas y compartición de archivos segura vía protocolo
+                            SMB/CIFS.
+                        </p>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-pill">Raspberry Pi 5</span>
+                            <span class="tech-pill">OpenMediaVault</span>
+                            <span class="tech-pill">Linux CLI</span>
+                            <span class="tech-pill">Samba/SMB</span>
+                            <span class="tech-pill">EXT4</span>
+                        </div>
+
+                        <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/NAS-OpenMediaVault-RaspberryPi"
+                            target="_blank" class="project-footer-link">
+                            Explorar Repositorio →
+                        </a>
+                    </div>
+
+                    <!-- PROYECTO 3: VPN Tailscale + Pi-hole en Docker -->
+                    <div class="project-card">
+                        <div class="project-top">
+                            <span class="project-type-tag tag-green">NETWORKING &amp; PRIVACY</span>
+                            <div class="project-links">
+                                <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/VPN-Tailscale-PiHole-Docker"
+                                    target="_blank" title="Ver en GitHub">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">VPN Tailscale &amp; DNS Sinkhole con Pi-hole en Docker</h3>
+                        <p class="project-desc">
+                            Despliegue en contenedor de una red privada virtual en patrón Sidecar mediante Docker
+                            Compose y Portainer. Habilitación de enrutamiento IP en el kernel Linux para operar como
+                            Exit Node y Subnet Router, combinado con filtrado DNS perimetral y bloqueo de anuncios con
+                            Pi-hole.
+                        </p>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-pill">Docker</span>
+                            <span class="tech-pill">Tailscale VPN</span>
+                            <span class="tech-pill">Pi-hole</span>
+                            <span class="tech-pill">Portainer</span>
+                            <span class="tech-pill">Sysctl / Routing</span>
+                        </div>
+
+                        <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/VPN-Tailscale-PiHole-Docker"
+                            target="_blank" class="project-footer-link">
+                            Explorar Repositorio →
+                        </a>
+                    </div>
+
+                    <!-- PROYECTO 4: Segmentación VLANs y SSH -->
+                    <div class="project-card">
+                        <div class="project-top">
+                            <span class="project-type-tag tag-green">NETWORKING &amp; HARDENING</span>
+                            <div class="project-links">
+                                <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Segmentacion-Redes-VLAN-SSH"
+                                    target="_blank" title="Ver en GitHub">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Segmentación de Redes Corporativas con VLANs, SSH &amp; Port Security
+                        </h3>
+                        <p class="project-desc">
+                            Diseño y fortificación de infraestructura de conmutación en Switch Cisco Catalyst 2960.
+                            Creación y segmentación lógica de dominios de difusión por departamentos (VLANs), canal de
+                            gestión remoto cifrado mediante SSHv2 y mitigación activa de ataques de capa 2 con Port
+                            Security.
+                        </p>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-pill">Cisco IOS</span>
+                            <span class="tech-pill">Packet Tracer</span>
+                            <span class="tech-pill">VLANs</span>
+                            <span class="tech-pill">SSHv2</span>
+                            <span class="tech-pill">Port Security</span>
+                        </div>
+
+                        <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Segmentacion-Redes-VLAN-SSH"
+                            target="_blank" class="project-footer-link">
+                            Explorar Repositorio →
+                        </a>
+                    </div>
+
+                    <!-- PROYECTO 5: NAT / PAT y Port Forwarding -->
+                    <div class="project-card">
+                        <div class="project-top">
+                            <span class="project-type-tag tag-blue">NETWORKING &amp; ROUTING</span>
+                            <div class="project-links">
+                                <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Implementacion-NAT-PAT-PortForwarding"
+                                    target="_blank" title="Ver en GitHub">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Traducción de Direcciones (NAT / PAT) &amp; Port Forwarding</h3>
+                        <p class="project-desc">
+                            Configuración de seguridad perimetral y ahorro de direccionamiento público IPv4 en router
+                            Cisco 2911. Despliegue de NAT con sobrecarga (PAT) para salida masiva de subredes privadas a
+                            internet y publicación controlada de servidores web internos mediante NAT estático.
+                        </p>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-pill">Cisco Router</span>
+                            <span class="tech-pill">NAT / PAT</span>
+                            <span class="tech-pill">Port Forwarding</span>
+                            <span class="tech-pill">Packet Tracer</span>
+                            <span class="tech-pill">Seguridad Perimetral</span>
+                        </div>
+
+                        <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Implementacion-NAT-PAT-PortForwarding"
+                            target="_blank" class="project-footer-link">
+                            Explorar Repositorio →
+                        </a>
+                    </div>
+
+                    <!-- PROYECTO 6: Migración P2V con Clonezilla -->
+                    <div class="project-card">
+                        <div class="project-top">
+                            <span class="project-type-tag tag-purple">VIRTUALIZATION &amp; BACKUP</span>
+                            <div class="project-links">
+                                <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Migracion-P2V-Clonezilla-Vbox"
+                                    target="_blank" title="Ver en GitHub">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Migración P2V (Physical-to-Virtual) con Clonezilla &amp; VirtualBox
+                        </h3>
+                        <p class="project-desc">
+                            Planificación y ejecución de una migración Physical-to-Virtual de un servidor físico Linux
+                            Ubuntu. Respaldo a nivel de bloques en frío con Clonezilla Live CD para garantizar
+                            consistencia absoluta, restauración sobre disco virtual VDI y optimización del entorno
+                            virtualizado.
+                        </p>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-pill">Clonezilla</span>
+                            <span class="tech-pill">VirtualBox</span>
+                            <span class="tech-pill">Linux Ubuntu</span>
+                            <span class="tech-pill">Migración P2V</span>
+                            <span class="tech-pill">VDI</span>
+                        </div>
+
+                        <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Migracion-P2V-Clonezilla-Vbox"
+                            target="_blank" class="project-footer-link">
+                            Explorar Repositorio →
+                        </a>
+                    </div>
+
+                    <!-- PROYECTO 7: Dual-Boot Linux y Windows -->
+                    <div class="project-card">
+                        <div class="project-top">
+                            <span class="project-type-tag tag-purple">SYSADMIN &amp; HARDWARE</span>
+                            <div class="project-links">
+                                <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Implementacion-Sistema-Dual-Boot-Linux-y-Windows"
+                                    target="_blank" title="Ver en GitHub">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Sistema Dual-Boot Nativo Windows 11 &amp; Ubuntu Desktop</h3>
+                        <p class="project-desc">
+                            Implementación sobre hardware físico real de un entorno corporativo de arranque dual nativo
+                            en modo UEFI/GPT. Redimensionamiento lógico de particiones NTFS sin pérdida de datos,
+                            aprovisionamiento manual para Ubuntu y configuración del gestor de arranque GRUB.
+                        </p>
+
+                        <div class="project-tech-stack">
+                            <span class="tech-pill">Windows 11 Pro</span>
+                            <span class="tech-pill">Ubuntu Linux</span>
+                            <span class="tech-pill">UEFI / GPT</span>
+                            <span class="tech-pill">GRUB</span>
+                            <span class="tech-pill">Particionamiento</span>
+                        </div>
+
+                        <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Implementacion-Sistema-Dual-Boot-Linux-y-Windows"
+                            target="_blank" class="project-footer-link">
+                            Explorar Repositorio →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Frase destacada solicitada por el usuario -->
+                <div class="projects-cta-box">
+                    <p class="projects-cta-text">
+                        Si quieres ver todos mis proyectos personales, haz click aquí:
+                        <a href="https://github.com/alexitocvf16/Proyectos-Personales" target="_blank"
+                            class="projects-cta-link">
+                            https://github.com/alexitocvf16/Proyectos-Personales
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- SECCIÓN 4: WRITEUPS & MÁQUINAS VULNERABLES (OFFENSIVE SECURITY)  -->
+        <!-- ================================================================= -->
+        <section class="writeups" id="writeups">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">// 04. HACKING ÉTICO &amp; CTFs</span>
+                    <h2 class="section-title">Writeups de Máquinas Vulnerables</h2>
+                </div>
+
+                <!-- Banner principal de Writeups -->
+                <div class="writeups-banner">
+                    <div class="writeups-banner-content">
+                        <span class="writeups-badge">[OFFENSIVE_SEC // eJPTv2 AUDIT STANDARDS]</span>
+                        <h3 class="writeups-title">Resolución Metódica y Auditorías de Pentesting</h3>
+                        <p class="writeups-desc">
+                            Documentación técnica paso a paso de máquinas vulnerables resueltas en plataformas como
+                            <strong>DockerLabs</strong>, <strong>HackMyVM</strong> y <strong>HackerLabs</strong>. Cada
+                            writeup detalla la fase de reconocimiento activo con Nmap, explotación ética de vectores web
+                            (LFI, RCE, bypass de autenticación), elevación de privilegios en Linux y post-explotación
+                            siguiendo los estándares prácticos de la certificación <strong>eJPTv2</strong>.
+                        </p>
+                        <div class="writeups-tags">
+                            <span class="tool-badge">eJPTv2</span>
+                            <span class="tool-badge">Kali Linux</span>
+                            <span class="tool-badge">Nmap</span>
+                            <span class="tool-badge">Burp Suite</span>
+                            <span class="tool-badge">Linux PrivEsc</span>
+                            <span class="tool-badge">DockerLabs</span>
+                            <span class="tool-badge">HackMyVM</span>
+                            <span class="tool-badge">HackerLabs</span>
+                        </div>
+                    </div>
+
+                    <div class="writeups-banner-action">
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank"
+                            class="btn btn-primary" style="font-size: 0.85rem; padding: 0.75rem 1.4rem;">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            Repositorio Solved-machines →
+                        </a>
+                        <span
+                            style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-top: 0.5rem;">
+                            github.com/alexitocvf16/Solved-machines
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Showcase de máquinas resueltas -->
+                <div class="machines-grid">
+                    <!-- MÁQUINA 1: Sedition -->
+                    <div class="machine-card">
+                        <div class="machine-top">
+                            <span class="machine-platform">HACKERLABS</span>
+                            <span
+                                style="color: var(--neon-red); font-size: 0.75rem; font-family: var(--font-mono);">PWNED
+                                💀</span>
+                        </div>
+                        <h4 class="machine-title">Máquina Sedition</h4>
+                        <p class="machine-desc">
+                            Auditoría web, descubrimiento de vectores de entrada, bypass de restricciones en formularios
+                            y escalada de privilegios metódica en entorno Linux.
+                        </p>
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                            Ver Writeup en GitHub →
+                        </a>
+                    </div>
+
+                    <!-- MÁQUINA 2: Canto -->
+                    <div class="machine-card">
+                        <div class="machine-top">
+                            <span class="machine-platform">HACKMYVM</span>
+                            <span
+                                style="color: var(--neon-red); font-size: 0.75rem; font-family: var(--font-mono);">PWNED
+                                💀</span>
+                        </div>
+                        <h4 class="machine-title">Máquina Canto</h4>
+                        <p class="machine-desc">
+                            Enumeración exhaustiva de puertos TCP/UDP, análisis forense de servicios expuestos,
+                            explotación remota y captura de evidencias finales.
+                        </p>
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                            Ver Writeup en GitHub →
+                        </a>
+                    </div>
+
+                    <!-- MÁQUINA 3: Grooti -->
+                    <div class="machine-card">
+                        <div class="machine-top">
+                            <span class="machine-platform">CTF LAB</span>
+                            <span
+                                style="color: var(--neon-red); font-size: 0.75rem; font-family: var(--font-mono);">PWNED
+                                💀</span>
+                        </div>
+                        <h4 class="machine-title">Máquina Grooti</h4>
+                        <p class="machine-desc">
+                            Reconocimiento con scripts Nmap, explotación de vulnerabilidades en aplicaciones web y
+                            obtención de shell reversa interactiva estabilizada.
+                        </p>
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                            Ver Writeup en GitHub →
+                        </a>
+                    </div>
+
+                    <!-- MÁQUINA 4: Darkweb -->
+                    <div class="machine-card">
+                        <div class="machine-top">
+                            <span class="machine-platform">VULN LAB</span>
+                            <span
+                                style="color: var(--neon-red); font-size: 0.75rem; font-family: var(--font-mono);">PWNED
+                                💀</span>
+                        </div>
+                        <h4 class="machine-title">Máquina Darkweb</h4>
+                        <p class="machine-desc">
+                            Investigación de vectores de inyección y exposición de datos confidenciales, comprometiendo
+                            la máquina hasta control de superusuario.
+                        </p>
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                            Ver Writeup en GitHub →
+                        </a>
+                    </div>
+
+                    <!-- MÁQUINA 5: Ofuspingu -->
+                    <div class="machine-card">
+                        <div class="machine-top">
+                            <span class="machine-platform">HACKERLABS</span>
+                            <span
+                                style="color: var(--neon-red); font-size: 0.75rem; font-family: var(--font-mono);">PWNED
+                                💀</span>
+                        </div>
+                        <h4 class="machine-title">Máquina Ofuspingu</h4>
+                        <p class="machine-desc">
+                            Análisis y deofuscación de scripts, descubrimiento de credenciales en memoria, explotación y
+                            escalada final de privilegios hacia root.
+                        </p>
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                            Ver Writeup en GitHub →
+                        </a>
+                    </div>
+
+                    <!-- MÁQUINA 6: Usersearch -->
+                    <div class="machine-card">
+                        <div class="machine-top">
+                            <span class="machine-platform">DOCKERLABS</span>
+                            <span
+                                style="color: var(--neon-red); font-size: 0.75rem; font-family: var(--font-mono);">PWNED
+                                💀</span>
+                        </div>
+                        <h4 class="machine-title">Máquina Usersearch</h4>
+                        <p class="machine-desc">
+                            Entorno de contenedor Docker vulnerable. Explotación de lógica de búsqueda web insegura,
+                            escape y elevación de permisos al sistema anfitrión.
+                        </p>
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                            Ver Writeup en GitHub →
+                        </a>
+                    </div>
+
+                    <!-- MÁQUINA 7: Spiderport -->
+                    <div class="machine-card">
+                        <div class="machine-top">
+                            <span class="machine-platform">DOCKERLABS</span>
+                            <span
+                                style="color: var(--neon-red); font-size: 0.75rem; font-family: var(--font-mono);">PWNED
+                                💀</span>
+                        </div>
+                        <h4 class="machine-title">Spiderport</h4>
+                        <p class="machine-desc">
+                            Escaneo no convencional de puertos y servicios dinámicos, explotación de puertas traseras y
+                            compromiso completo del contenedor.
+                        </p>
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                            Ver Writeup en GitHub →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- SECCIÓN 5: FORMACIÓN & CERTIFICACIONES                            -->
+        <!-- ================================================================= -->
+        <section class="experience" id="education">
+            <div id="experience"></div>
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">// 05. CREDENCIALES &amp; TRAYECTORIA</span>
+                    <h2 class="section-title">Formación &amp; Certificaciones</h2>
+                </div>
+
+                <!-- SUBSECCIÓN: CERTIFICACIONES OFICIALES -->
+                <div class="certs-container">
+                    <div class="certs-header-bar">
+                        <div>
+                            <span class="section-tag" style="margin-bottom: 0.2rem;">// ACREDITACIONES
+                                PROFESIONALES</span>
+                            <h3
+                                style="font-family: var(--font-mono); font-size: 1.3rem; color: var(--text-main); font-weight: 700;">
+                                Certificaciones Oficiales Verificadas
+                            </h3>
+                        </div>
+                        <div class="certs-external-links">
+                            <a href="https://www.credly.com/users/alex16/badges/credly" target="_blank"
+                                class="certs-external-btn">
+                                🎖️ Ver Insignias en Credly (alex16) ↗
+                            </a>
+                            <a href="https://certs.ine.com/4f74e464-99be-40e3-956f-17170cea5a59#acc.FoaTCyZn"
+                                target="_blank" class="certs-external-btn">
+                                📜 Transcript Oficial INE Security ↗
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="certs-grid">
+                        <!-- CERTIFICACIÓN 1: eJPTv2 -->
+                        <div class="cert-card cert-highlight">
+                            <div>
+                                <div class="cert-issuer">
+                                    <span class="cert-issuer-badge">INE Security</span>
+                                    <span style="color: var(--neon-green); font-size: 0.75rem;">VERIFICADA</span>
+                                </div>
+                                <h4 class="cert-title">eJPTv2 (eLearnSecurity Junior Penetration Tester)</h4>
+                                <p class="cert-desc">
+                                    Certificación práctica en metodología de pentesting, evaluación de
+                                    vulnerabilidades, explotación ética de aplicaciones web y post-explotación en
+                                    redes TCP/IP.
+                                </p>
+                            </div>
+                            <a href="https://certs.ine.com/4f74e464-99be-40e3-956f-17170cea5a59#acc.FoaTCyZn"
+                                target="_blank" class="cert-verify-link">
+                                Verificar Credencial INE Oficial →
+                            </a>
+                        </div>
+
+                        <!-- CERTIFICACIÓN 2: Cisco CCST Cybersecurity -->
+                        <div class="cert-card">
+                            <div>
+                                <div class="cert-issuer">
+                                    <span class="cert-issuer-badge">Cisco</span>
+                                    <span style="color: var(--neon-cyan); font-size: 0.75rem;">CREDLY</span>
+                                </div>
+                                <h4 class="cert-title">Cisco Certified Support Technician (CCST) Cybersecurity</h4>
+                                <p class="cert-desc">
+                                    Acreditación oficial Cisco que valida competencias esenciales en principios de
+                                    ciberseguridad, seguridad en endpoints, monitorización y defensa de redes.
+                                </p>
+                            </div>
+                            <a href="https://www.credly.com/badges/a165fa2c-340c-47dc-a0e9-1448c0a658ca/linked_in_profile"
+                                target="_blank" class="cert-verify-link">
+                                Verificar Insignia en Credly →
+                            </a>
+                        </div>
+
+                        <!-- CERTIFICACIÓN 3: SC-900 Microsoft -->
+                        <div class="cert-card">
+                            <div>
+                                <div class="cert-issuer">
+                                    <span class="cert-issuer-badge">Microsoft</span>
+                                    <span style="color: var(--neon-cyan); font-size: 0.75rem;">CREDLY</span>
+                                </div>
+                                <h4 class="cert-title">SC-900: Security, Compliance, and Identity Fundamentals</h4>
+                                <p class="cert-desc">
+                                    Conocimientos en gestión de identidades y accesos con Microsoft Entra ID (Azure
+                                    AD), soluciones de seguridad cloud de Microsoft y gobernanza de cumplimiento.
+                                </p>
+                            </div>
+                            <a href="https://www.credly.com/badges/40ea2de5-7ac4-4dfa-9ca8-f460a93e3bce/linked_in_profile"
+                                target="_blank" class="cert-verify-link">
+                                Verificar Insignia en Credly →
+                            </a>
+                        </div>
+
+                        <!-- CERTIFICACIÓN 4: Azure AI Fundamentals -->
+                        <div class="cert-card">
+                            <div>
+                                <div class="cert-issuer">
+                                    <span class="cert-issuer-badge">Microsoft</span>
+                                    <span style="color: var(--neon-cyan); font-size: 0.75rem;">CREDLY</span>
+                                </div>
+                                <h4 class="cert-title">Microsoft Certified: Azure AI Fundamentals</h4>
+                                <p class="cert-desc">
+                                    Certificación que demuestra comprensión de los conceptos fundamentales de
+                                    Inteligencia Artificial, Machine Learning y servicios cognitivos en la nube de
+                                    Azure.
+                                </p>
+                            </div>
+                            <a href="https://www.credly.com/badges/2429ef7d-24e2-4666-aa3b-78119c4d83da/linked_in_profile"
+                                target="_blank" class="cert-verify-link">
+                                Verificar Insignia en Credly →
+                            </a>
+                        </div>
+
+                        <!-- CERTIFICACIÓN 5: IT Specialist Cybersecurity -->
+                        <div class="cert-card">
+                            <div>
+                                <div class="cert-issuer">
+                                    <span class="cert-issuer-badge">Certiport</span>
+                                    <span style="color: var(--neon-cyan); font-size: 0.75rem;">CREDLY</span>
+                                </div>
+                                <h4 class="cert-title">IT Specialist - Cybersecurity</h4>
+                                <p class="cert-desc">
+                                    Validación de conocimientos esenciales en principios de seguridad informática,
+                                    protección de datos, mitigación de vulnerabilidades y defensa de sistemas.
+                                </p>
+                            </div>
+                            <a href="https://www.credly.com/badges/653807a5-5e3b-40ba-bd99-17eb9156b740/linked_in_profile"
+                                target="_blank" class="cert-verify-link">
+                                Verificar Insignia en Credly →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUBSECCIÓN: FORMACIÓN ACADÉMICA (TIMELINE) -->
+                <div style="margin-top: 4rem;">
+                    <div style="margin-bottom: 2.5rem;">
+                        <span class="section-tag">// HISTORIAL FORMATIVO</span>
+                        <h3
+                            style="font-family: var(--font-mono); font-size: 1.3rem; color: var(--text-main); font-weight: 700;">
+                            Formación Académica
+                        </h3>
+                    </div>
+
+                    <div class="timeline">
+                        <!-- ITEM 1: ASIR -->
+                        <div class="timeline-item">
+                            <div class="timeline-node"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2025 — ACTUALIDAD</span>
+                                <h3 class="timeline-role">Grado Superior: Administración de Sistemas Informáticos en
+                                    Red (ASIR)</h3>
+                                <span class="timeline-company">@ Tech Hub Euroformac (FP Euroformac)</span>
+                                <ul class="timeline-details">
+                                    <li><strong>Estado:</strong> Cursando actualmente segundo año de ASIR.</li>
+                                    <li><strong>Especialización:</strong> Administración de sistemas Windows Server
+                                        y Linux, gestión de redes e infraestructura con Cisco, servicios de red y
+                                        seguridad perimetral.</li>
+                                    <li><strong>Práctica constante:</strong> Laboratorios de hacking ético, creación
+                                        de entornos virtuales vulnerables (VMware/VirtualBox) y despliegue de
+                                        soluciones en la nube.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 2: Bachillerato -->
+                        <div class="timeline-item">
+                            <div class="timeline-node"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">EDUCACIÓN SECUNDARIA POSTOBLIGATORIA</span>
+                                <h3 class="timeline-role">Bachillerato</h3>
+                                <span class="timeline-company">@ I.E.S. El Greco (Toledo)</span>
+                                <ul class="timeline-details">
+                                    <li>Modalidad de Ciencias Sociales con informática como optativa.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 3: ESO -->
+                        <div class="timeline-item">
+                            <div class="timeline-node"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">EDUCACIÓN SECUNDARIA</span>
+                                <h3 class="timeline-role">Educación Secundaria Obligatoria (ESO)</h3>
+                                <span class="timeline-company">@ Santa María Maristas Toledo</span>
+                                <ul class="timeline-details">
+                                    <li>Formación académica integral, habilidades de trabajo colaborativo y método de
+                                        estudio analítico.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- SECCIÓN 5: FOOTER / CONTACTO                                      -->
+        <!-- ================================================================= -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact-card">
+                    <span class="section-tag">// 06. ESTABLECER CONEXIÓN</span>
+                    <h2 class="contact-title">¿Conectamos?</h2>
+
+                    <p class="contact-desc">
+                        Estoy buscando activamente iniciar mi carrera laboral en el ámbito de la
+                        <strong>administración de sistemas y la ciberseguridad</strong>. Cuento con carnet
+                        de conducir B y coche propio, disponibilidad inmediata, flexibilidad horaria y total
+                        movilidad geográfica.
+                    </p>
+
+                    <!-- Tarjetas de Información Rápida de Contacto -->
+                    <div class="contact-details-grid">
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">📧</div>
+                            <div class="contact-detail-content">
+                                <span>Correo Electrónico</span>
+                                <a href="mailto:sanchezalexmoreno16@gmail.com">sanchezalexmoreno16@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">📍</div>
+                            <div class="contact-detail-content">
+                                <span>Ubicación &amp; Movilidad</span>
+                                <strong>Toledo, España (Carnet B y Coche Propio)</strong>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">🎓</div>
+                            <div class="contact-detail-content">
+                                <span>Formación Actual</span>
+                                <strong>2º de ASIR (Tech Hub Euroformac)</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-buttons">
+                        <a href="mailto:sanchezalexmoreno16@gmail.com" class="btn btn-primary">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            sanchezalexmoreno16@gmail.com
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/alexitosm16" target="_blank" class="btn btn-secondary">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                            LinkedIn
+                        </a>
+
+                        <a href="https://github.com/alexitocvf16" target="_blank" class="btn btn-secondary">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            GitHub
+                        </a>
+
+                        <a href="https://www.credly.com/users/alex16/badges/credly" target="_blank"
+                            class="btn btn-secondary">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                                </path>
+                            </svg>
+                            Insignias Credly
+                        </a>
+
+                        <a href="Curriculum.pdf" target="_blank" class="btn btn-secondary">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                            Descargar CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER INFERIOR -->
+    <footer>
+        <div class="container">
+            <div class="footer-socials">
+                <a href="https://github.com/alexitocvf16" target="_blank" aria-label="GitHub">
+                    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/alexitosm16" target="_blank" aria-label="LinkedIn">
+                    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+                <a href="mailto:sanchezalexmoreno16@gmail.com" aria-label="Email">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+
+            <p>// EOF — Diseñado con enfoque en Ciberseguridad &amp; Rendimiento por <strong>Alejandro Sánchez
+                    Moreno</strong>.</p>
+            <p style="font-size: 0.75rem; margin-top: 0.4rem; color: #475569;">Desplegado en GitHub Pages • Código
+                Abierto</p>
+        </div>
+    </footer>
+
+    <!-- ================================================================= -->
+    <!-- LOGICA JAVASCRIPT (ANIMACIONES, TYPEWRITER Y TERMINAL)             -->
+    <!-- ================================================================= -->
+    <script>
+
+        const rolesList = [
+            "Administrador de Sistemas",
+            "Técnico de Ciberseguridad",
+            "Junior Pentester (eJPTv2)",
+            "Estudiante de 2º de ASIR",
+            "Ethical Hacking & SysAdmin"
+        ];
+
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterEl = document.getElementById("typewriterText");
+        const typingSpeed = 90;
+        const erasingSpeed = 45;
+        const delayBetweenRoles = 1800;
+
+        function typeWriter() {
+            const currentRole = rolesList[roleIndex];
+
+            if (isDeleting) {
+                typewriterEl.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterEl.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let currentSpeed = isDeleting ? erasingSpeed : typingSpeed;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                currentSpeed = delayBetweenRoles;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % rolesList.length;
+                currentSpeed = 400;
+            }
+
+            setTimeout(typeWriter, currentSpeed);
+        }
+
+        // Iniciar máquina de escribir al cargar
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typewriterEl) typeWriter();
+        });
+
+        // =================================================================
+        // LOGICA DE LA CONSOLA INTERACTIVA (SOBRE MÍ)
+        // =================================================================
+        const terminalInput = document.getElementById("terminalInput");
+        const terminalOutput = document.getElementById("terminalOutput");
+
+        if (terminalInput) {
+            terminalInput.addEventListener("keydown", function (e) {
+                if (e.key === "Enter") {
+                    const cmd = this.value.trim().toLowerCase();
+                    this.value = "";
+
+                    if (!cmd) return;
+
+                    // Línea ingresada por el usuario
+                    const commandLine = document.createElement("div");
+                    commandLine.className = "terminal-line";
+                    commandLine.innerHTML = `<span class="terminal-prompt">guest@terminal:~$</span> <span class="terminal-cmd">${escapeHTML(cmd)}</span>`;
+                    terminalOutput.appendChild(commandLine);
+
+                    // Respuesta del comando
+                    const responseBlock = document.createElement("div");
+                    responseBlock.className = "terminal-output";
+
+                    switch (cmd) {
+                        case "help":
+                            responseBlock.innerHTML = `
+                                <p><strong>Comandos disponibles:</strong></p>
+                                <p>- <code>whoami</code>: Identidad del profesional.</p>
+                                <p>- <code>skills</code>: Resumen de habilidades clave.</p>
+                                <p>- <code>projects</code>: Ir a la sección de proyectos personales.</p>
+                                <p>- <code>writeups</code>: Ir a la sección de writeups de máquinas.</p>
+                                <p>- <code>certs</code>: Ver certificaciones oficiales verificadas.</p>
+                                <p>- <code>education</code>: Formación académica y trayectoria.</p>
+                                <p>- <code>contact</code>: Información de contacto directo.</p>
+                                <p>- <code>cv</code>: Descargar Curriculum Vitae en PDF.</p>
+                                <p>- <code>clear</code>: Limpiar la consola de terminal.</p>
+                            `;
+                            break;
+
+                        case "whoami":
+                            responseBlock.innerHTML = "<p><strong>Alejandro Sánchez Moreno</strong> — Administrador de Sistemas y Técnico de Ciberseguridad (Cursando 2º ASIR en Tech Hub Euroformac). Toledo, España.</p>";
+                            break;
+
+                        case "skills":
+                            responseBlock.innerHTML = "<p>Wireshark, Burp Suite, Splunk, Kali Linux, Windows Server, Active Directory, Linux, Cisco Packet Tracer, Azure, Entra ID, AWS, Python, Docker, MySQL.</p>";
+                            break;
+
+                        case "certs":
+                        case "certificaciones":
+                            responseBlock.innerHTML = "<p>Certificaciones: eJPTv2 (INE Security), Cisco CCST Cybersecurity, Microsoft SC-900, Azure AI Fundamentals, IT Specialist Cybersecurity. Verificables en Credly e INE.</p>";
+                            break;
+
+                        case "projects":
+                            responseBlock.innerHTML = "<p>Redirigiendo a proyectos personales: github.com/alexitocvf16/Proyectos-Personales...</p>";
+                            window.location.hash = "#projects";
+                            break;
+
+                        case "education":
+                        case "formacion":
+                            responseBlock.innerHTML = "<p>Redirigiendo a formación académica y certificaciones...</p>";
+                            window.location.hash = "#education";
+                            break;
+
+                        case "writeups":
+                        case "machines":
+                        case "ctf":
+                            responseBlock.innerHTML = "<p>Redirigiendo a Writeups &amp; Máquinas vulnerables resueltas (eJPTv2): github.com/alexitocvf16/Solved-machines...</p>";
+                            window.location.hash = "#writeups";
+                            break;
+
+                        case "contact":
+                            responseBlock.innerHTML = "<p>Email: sanchezalexmoreno16@gmail.com | LinkedIn: linkedin.com/in/alexitosm16 | GitHub: github.com/alexitocvf16 | Credly: credly.com/users/alex16</p>";
+                            break;
+
+                        case "cv":
+                            responseBlock.innerHTML = "<p>Abriendo curriculum... <a href='Curriculum.pdf' target='_blank' style='color: var(--neon-green);'>[Descargar Curriculum.pdf]</a></p>";
+                            break;
+
+                        case "sudo":
+                        case "sudo su":
+                            responseBlock.innerHTML = "<p style='color: var(--neon-red);'>[ALERTA DE SEGURIDAD]: Intento de escalada registrado en syslog. Usuario no está en el archivo sudoers. Este incidente será reportado.</p>";
+                            break;
+
+                        case "clear":
+                            terminalOutput.innerHTML = "";
+                            return;
+
+                        default:
+                            responseBlock.innerHTML = `<p style="color: var(--neon-red);">bash: comando no encontrado: '${escapeHTML(cmd)}'. Escribe <code>help</code> para ver opciones.</p>`;
+                            break;
+                    }
+
+                    terminalOutput.appendChild(responseBlock);
+                    terminalOutput.scrollTop = terminalOutput.scrollHeight;
+                }
+            });
+        }
+
+        // Función para evitar inyección en terminal interactiva
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g,
+                tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+            );
+        }
+
+        // =================================================================
+        // BOTÓN COPIAR HUELLA PGP
+        // =================================================================
+        const copyPgpBtn = document.getElementById("copyPgpBtn");
+        const pgpKeyText = document.getElementById("pgpKeyText");
+
+        if (copyPgpBtn && pgpKeyText) {
+            copyPgpBtn.addEventListener("click", () => {
+                navigator.clipboard.writeText(pgpKeyText.innerText).then(() => {
+                    const originalText = copyPgpBtn.innerText;
+                    copyPgpBtn.innerText = "¡COPIADO!";
+                    copyPgpBtn.style.borderColor = "var(--neon-green)";
+                    copyPgpBtn.style.color = "var(--neon-green)";
+
+                    setTimeout(() => {
+                        copyPgpBtn.innerText = originalText;
+                        copyPgpBtn.style.borderColor = "";
+                        copyPgpBtn.style.color = "";
+                    }, 2000);
+                });
+            });
+        }
+
+        // =================================================================
+        // MENÚ MÓVIL (HAMBURGUESA)
+        // =================================================================
+        const mobileToggle = document.getElementById("mobileToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        if (mobileToggle && navLinks) {
+            mobileToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("open");
+            });
+
+            // Cerrar menú al hacer clic en un enlace
+            navLinks.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("open");
+                });
+            });
+        }
+
+        // =================================================================
+        // EFECTO CANVAS DE MATRIZ / NODOS CIBERNÉTICOS
+        // =================================================================
+        const canvas = document.getElementById("cyber-canvas");
+        if (canvas) {
+            const ctx = canvas.getContext("2d");
+            let particles = [];
+            const particleCount = 45;
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            window.addEventListener("resize", resizeCanvas);
+            resizeCanvas();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.7;
+                    this.vy = (Math.random() - 0.5) * 0.7;
+                    this.radius = Math.random() * 1.5 + 1;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+                    if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = "rgba(0, 240, 255, 0.6)";
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            function animateCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+
+                    // Conectar partículas cercanas con líneas cibernéticas
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 130) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(0, 255, 136, ${0.15 * (1 - dist / 130)})`;
+                            ctx.lineWidth = 0.7;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                requestAnimationFrame(animateCanvas);
+            }
+
+            animateCanvas();
+        }
+    </script>
+</body>
+
+</html>
