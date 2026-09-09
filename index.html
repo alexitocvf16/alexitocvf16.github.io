@@ -23,6 +23,23 @@
         content="Portfolio profesional de Alejandro Sánchez Moreno: Proyectos de hacking ético, administración de sistemas Windows Server y Linux, y certificaciones oficiales.">
     <meta property="og:type" content="website">
 
+    <!-- ================================================================= -->
+    <!-- CABECERAS DE SEGURIDAD CLIENT-SIDE (HARDENING & POLÍTICAS)        -->
+    <!-- ================================================================= -->
+    <!-- Content Security Policy: Previene XSS e inyecciones de contenido no autorizado -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+
+    <!-- Anti-MIME-Sniffing: Evita ataques por confusión de tipos MIME -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+    <!-- Referrer-Policy: Previene fugas de cabeceras Referer a sitios de terceros -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Permissions-Policy: Restringe acceso a APIs de hardware innecesarias -->
+    <meta http-equiv="Permissions-Policy"
+        content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
+
     <!-- Fuentes de Google: JetBrains Mono (para el toque terminal/hacker) e Inter (para lectura limpia) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,6 +150,7 @@
         section {
             padding: 6rem 0;
             position: relative;
+            scroll-margin-top: 80px;
         }
 
         /* Encabezados de Sección */
@@ -1772,7 +1790,7 @@
                                 Ver Proyectos
                             </a>
 
-                            <a href="Curriculum.pdf" target="_blank" class="btn btn-secondary">
+                            <a href="Curriculum.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                                 <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
@@ -1905,7 +1923,8 @@
                         <div class="terminal-interactive">
                             <span class="terminal-prompt">guest@terminal:~$</span>
                             <input type="text" id="terminalInput"
-                                placeholder="Escribe 'help', 'skills', 'clear' o 'contact'..." autocomplete="off">
+                                placeholder="Escribe 'help', 'skills', 'clear' o 'contact'..."
+                                autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="120">
                         </div>
                         <div class="terminal-help-hint">
                             💡 Tip: Puedes interactuar con la terminal ingresando comandos y presionando [Enter].
@@ -2130,7 +2149,7 @@
                         <p>Colección de prácticas, entornos vulnerables, laboratorios de redes y administración de
                             sistemas.</p>
                     </div>
-                    <a href="https://github.com/alexitocvf16/Proyectos-Personales" target="_blank"
+                    <a href="https://github.com/alexitocvf16/Proyectos-Personales" target="_blank" rel="noopener noreferrer"
                         class="btn btn-primary" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                             <path
@@ -2147,7 +2166,7 @@
                             <span class="project-type-tag tag-blue">SYSADMIN &amp; CLOUD IDENTITY</span>
                             <div class="project-links">
                                 <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Configuracion-Avanzada-Active-Directory-GPO"
-                                    target="_blank" title="Ver en GitHub">
+                                    target="_blank" rel="noopener noreferrer" title="Ver en GitHub">
                                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                                         <path
                                             d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -2172,7 +2191,7 @@
                         </div>
 
                         <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Configuracion-Avanzada-Active-Directory-GPO"
-                            target="_blank" class="project-footer-link">
+                            target="_blank" rel="noopener noreferrer" class="project-footer-link">
                             Explorar Repositorio →
                         </a>
                     </div>
@@ -2183,7 +2202,7 @@
                             <span class="project-type-tag tag-blue">SYSADMIN &amp; STORAGE</span>
                             <div class="project-links">
                                 <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/NAS-OpenMediaVault-RaspberryPi"
-                                    target="_blank" title="Ver en GitHub">
+                                    target="_blank" rel="noopener noreferrer" title="Ver en GitHub">
                                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                                         <path
                                             d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -2209,7 +2228,7 @@
                         </div>
 
                         <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/NAS-OpenMediaVault-RaspberryPi"
-                            target="_blank" class="project-footer-link">
+                            target="_blank" rel="noopener noreferrer" class="project-footer-link">
                             Explorar Repositorio →
                         </a>
                     </div>
@@ -2220,7 +2239,7 @@
                             <span class="project-type-tag tag-green">NETWORKING &amp; PRIVACY</span>
                             <div class="project-links">
                                 <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/VPN-Tailscale-PiHole-Docker"
-                                    target="_blank" title="Ver en GitHub">
+                                    target="_blank" rel="noopener noreferrer" title="Ver en GitHub">
                                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                                         <path
                                             d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -2246,7 +2265,7 @@
                         </div>
 
                         <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/VPN-Tailscale-PiHole-Docker"
-                            target="_blank" class="project-footer-link">
+                            target="_blank" rel="noopener noreferrer" class="project-footer-link">
                             Explorar Repositorio →
                         </a>
                     </div>
@@ -2257,7 +2276,7 @@
                             <span class="project-type-tag tag-green">NETWORKING &amp; HARDENING</span>
                             <div class="project-links">
                                 <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Segmentacion-Redes-VLAN-SSH"
-                                    target="_blank" title="Ver en GitHub">
+                                    target="_blank" rel="noopener noreferrer" title="Ver en GitHub">
                                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                                         <path
                                             d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -2284,7 +2303,7 @@
                         </div>
 
                         <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Segmentacion-Redes-VLAN-SSH"
-                            target="_blank" class="project-footer-link">
+                            target="_blank" rel="noopener noreferrer" class="project-footer-link">
                             Explorar Repositorio →
                         </a>
                     </div>
@@ -2295,7 +2314,7 @@
                             <span class="project-type-tag tag-blue">NETWORKING &amp; ROUTING</span>
                             <div class="project-links">
                                 <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Implementacion-NAT-PAT-PortForwarding"
-                                    target="_blank" title="Ver en GitHub">
+                                    target="_blank" rel="noopener noreferrer" title="Ver en GitHub">
                                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                                         <path
                                             d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -2320,7 +2339,7 @@
                         </div>
 
                         <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Implementacion-NAT-PAT-PortForwarding"
-                            target="_blank" class="project-footer-link">
+                            target="_blank" rel="noopener noreferrer" class="project-footer-link">
                             Explorar Repositorio →
                         </a>
                     </div>
@@ -2331,7 +2350,7 @@
                             <span class="project-type-tag tag-purple">VIRTUALIZATION &amp; BACKUP</span>
                             <div class="project-links">
                                 <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Migracion-P2V-Clonezilla-Vbox"
-                                    target="_blank" title="Ver en GitHub">
+                                    target="_blank" rel="noopener noreferrer" title="Ver en GitHub">
                                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                                         <path
                                             d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -2358,7 +2377,7 @@
                         </div>
 
                         <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Migracion-P2V-Clonezilla-Vbox"
-                            target="_blank" class="project-footer-link">
+                            target="_blank" rel="noopener noreferrer" class="project-footer-link">
                             Explorar Repositorio →
                         </a>
                     </div>
@@ -2369,7 +2388,7 @@
                             <span class="project-type-tag tag-purple">SYSADMIN &amp; HARDWARE</span>
                             <div class="project-links">
                                 <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Implementacion-Sistema-Dual-Boot-Linux-y-Windows"
-                                    target="_blank" title="Ver en GitHub">
+                                    target="_blank" rel="noopener noreferrer" title="Ver en GitHub">
                                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                                         <path
                                             d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -2394,7 +2413,7 @@
                         </div>
 
                         <a href="https://github.com/alexitocvf16/Proyectos-Personales/tree/main/Implementacion-Sistema-Dual-Boot-Linux-y-Windows"
-                            target="_blank" class="project-footer-link">
+                            target="_blank" rel="noopener noreferrer" class="project-footer-link">
                             Explorar Repositorio →
                         </a>
                     </div>
@@ -2404,7 +2423,7 @@
                 <div class="projects-cta-box">
                     <p class="projects-cta-text">
                         Si quieres ver todos mis proyectos personales, haz click aquí:
-                        <a href="https://github.com/alexitocvf16/Proyectos-Personales" target="_blank"
+                        <a href="https://github.com/alexitocvf16/Proyectos-Personales" target="_blank" rel="noopener noreferrer"
                             class="projects-cta-link">
                             https://github.com/alexitocvf16/Proyectos-Personales
                         </a>
@@ -2448,7 +2467,7 @@
                     </div>
 
                     <div class="writeups-banner-action">
-                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank"
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" rel="noopener noreferrer"
                             class="btn btn-primary" style="font-size: 0.85rem; padding: 0.75rem 1.4rem;">
                             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -2478,7 +2497,7 @@
                             Auditoría web, descubrimiento de vectores de entrada, bypass de restricciones en formularios
                             y escalada de privilegios metódica en entorno Linux.
                         </p>
-                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" rel="noopener noreferrer" class="machine-link">
                             Ver Writeup en GitHub →
                         </a>
                     </div>
@@ -2496,7 +2515,7 @@
                             Enumeración exhaustiva de puertos TCP/UDP, análisis forense de servicios expuestos,
                             explotación remota y captura de evidencias finales.
                         </p>
-                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" rel="noopener noreferrer" class="machine-link">
                             Ver Writeup en GitHub →
                         </a>
                     </div>
@@ -2514,7 +2533,7 @@
                             Reconocimiento con scripts Nmap, explotación de vulnerabilidades en aplicaciones web y
                             obtención de shell reversa interactiva estabilizada.
                         </p>
-                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" rel="noopener noreferrer" class="machine-link">
                             Ver Writeup en GitHub →
                         </a>
                     </div>
@@ -2532,7 +2551,7 @@
                             Investigación de vectores de inyección y exposición de datos confidenciales, comprometiendo
                             la máquina hasta control de superusuario.
                         </p>
-                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" rel="noopener noreferrer" class="machine-link">
                             Ver Writeup en GitHub →
                         </a>
                     </div>
@@ -2550,7 +2569,7 @@
                             Análisis y deofuscación de scripts, descubrimiento de credenciales en memoria, explotación y
                             escalada final de privilegios hacia root.
                         </p>
-                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" rel="noopener noreferrer" class="machine-link">
                             Ver Writeup en GitHub →
                         </a>
                     </div>
@@ -2568,7 +2587,7 @@
                             Entorno de contenedor Docker vulnerable. Explotación de lógica de búsqueda web insegura,
                             escape y elevación de permisos al sistema anfitrión.
                         </p>
-                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" rel="noopener noreferrer" class="machine-link">
                             Ver Writeup en GitHub →
                         </a>
                     </div>
@@ -2586,7 +2605,7 @@
                             Escaneo no convencional de puertos y servicios dinámicos, explotación de puertas traseras y
                             compromiso completo del contenedor.
                         </p>
-                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" class="machine-link">
+                        <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" rel="noopener noreferrer" class="machine-link">
                             Ver Writeup en GitHub →
                         </a>
                     </div>
@@ -2617,12 +2636,12 @@
                             </h3>
                         </div>
                         <div class="certs-external-links">
-                            <a href="https://www.credly.com/users/alex16/badges/credly" target="_blank"
+                            <a href="https://www.credly.com/users/alex16/badges/credly" target="_blank" rel="noopener noreferrer"
                                 class="certs-external-btn">
                                 🎖️ Ver Insignias en Credly (alex16) ↗
                             </a>
                             <a href="https://certs.ine.com/4f74e464-99be-40e3-956f-17170cea5a59#acc.FoaTCyZn"
-                                target="_blank" class="certs-external-btn">
+                                target="_blank" rel="noopener noreferrer" class="certs-external-btn">
                                 📜 Transcript Oficial INE Security ↗
                             </a>
                         </div>
@@ -2644,7 +2663,7 @@
                                 </p>
                             </div>
                             <a href="https://certs.ine.com/4f74e464-99be-40e3-956f-17170cea5a59#acc.FoaTCyZn"
-                                target="_blank" class="cert-verify-link">
+                                target="_blank" rel="noopener noreferrer" class="cert-verify-link">
                                 Verificar Credencial INE Oficial →
                             </a>
                         </div>
@@ -2663,7 +2682,7 @@
                                 </p>
                             </div>
                             <a href="https://www.credly.com/badges/a165fa2c-340c-47dc-a0e9-1448c0a658ca/linked_in_profile"
-                                target="_blank" class="cert-verify-link">
+                                target="_blank" rel="noopener noreferrer" class="cert-verify-link">
                                 Verificar Insignia en Credly →
                             </a>
                         </div>
@@ -2682,7 +2701,7 @@
                                 </p>
                             </div>
                             <a href="https://www.credly.com/badges/40ea2de5-7ac4-4dfa-9ca8-f460a93e3bce/linked_in_profile"
-                                target="_blank" class="cert-verify-link">
+                                target="_blank" rel="noopener noreferrer" class="cert-verify-link">
                                 Verificar Insignia en Credly →
                             </a>
                         </div>
@@ -2702,7 +2721,7 @@
                                 </p>
                             </div>
                             <a href="https://www.credly.com/badges/2429ef7d-24e2-4666-aa3b-78119c4d83da/linked_in_profile"
-                                target="_blank" class="cert-verify-link">
+                                target="_blank" rel="noopener noreferrer" class="cert-verify-link">
                                 Verificar Insignia en Credly →
                             </a>
                         </div>
@@ -2721,7 +2740,7 @@
                                 </p>
                             </div>
                             <a href="https://www.credly.com/badges/653807a5-5e3b-40ba-bd99-17eb9156b740/linked_in_profile"
-                                target="_blank" class="cert-verify-link">
+                                target="_blank" rel="noopener noreferrer" class="cert-verify-link">
                                 Verificar Insignia en Credly →
                             </a>
                         </div>
@@ -2843,7 +2862,7 @@
                             sanchezalexmoreno16@gmail.com
                         </a>
 
-                        <a href="https://www.linkedin.com/in/alexitosm16" target="_blank" class="btn btn-secondary">
+                        <a href="https://www.linkedin.com/in/alexitosm16" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -2851,7 +2870,7 @@
                             LinkedIn
                         </a>
 
-                        <a href="https://github.com/alexitocvf16" target="_blank" class="btn btn-secondary">
+                        <a href="https://github.com/alexitocvf16" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -2859,7 +2878,7 @@
                             GitHub
                         </a>
 
-                        <a href="https://www.credly.com/users/alex16/badges/credly" target="_blank"
+                        <a href="https://www.credly.com/users/alex16/badges/credly" target="_blank" rel="noopener noreferrer"
                             class="btn btn-secondary">
                             <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2869,7 +2888,7 @@
                             Insignias Credly
                         </a>
 
-                        <a href="Curriculum.pdf" target="_blank" class="btn btn-secondary">
+                        <a href="Curriculum.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                             <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
@@ -2887,13 +2906,13 @@
     <footer>
         <div class="container">
             <div class="footer-socials">
-                <a href="https://github.com/alexitocvf16" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/alexitocvf16" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                     </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/alexitosm16" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/alexitosm16" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -2972,37 +2991,72 @@
         const terminalInput = document.getElementById("terminalInput");
         const terminalOutput = document.getElementById("terminalOutput");
 
+        // Función universal de navegación suave hacia cualquier sección
+        function navigateToSection(sectionId) {
+            const target = document.getElementById(sectionId);
+            if (target) {
+                // Desenfoncar el input para que el navegador no bloquee el scroll hacia abajo
+                if (terminalInput) {
+                    terminalInput.blur();
+                }
+
+                // Scroll suave e inmediato hacia la sección
+                setTimeout(() => {
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }, 60);
+
+                try {
+                    history.pushState(null, null, "#" + sectionId);
+                } catch (_) {}
+            }
+        }
+
         if (terminalInput) {
             terminalInput.addEventListener("keydown", function (e) {
                 if (e.key === "Enter") {
-                    const cmd = this.value.trim().toLowerCase();
+                    // Sanitización de entrada: recorte y longitud máxima
+                    const rawInput = this.value.trim().slice(0, 120);
+                    const cmd = rawInput.toLowerCase();
                     this.value = "";
 
                     if (!cmd) return;
 
-                    // Línea ingresada por el usuario
+                    // Línea ingresada por el usuario usando textContent (100% Inmune a XSS)
                     const commandLine = document.createElement("div");
                     commandLine.className = "terminal-line";
-                    commandLine.innerHTML = `<span class="terminal-prompt">guest@terminal:~$</span> <span class="terminal-cmd">${escapeHTML(cmd)}</span>`;
+
+                    const promptSpan = document.createElement("span");
+                    promptSpan.className = "terminal-prompt";
+                    promptSpan.textContent = "guest@terminal:~$ ";
+
+                    const cmdSpan = document.createElement("span");
+                    cmdSpan.className = "terminal-cmd";
+                    cmdSpan.textContent = rawInput;
+
+                    commandLine.appendChild(promptSpan);
+                    commandLine.appendChild(cmdSpan);
                     terminalOutput.appendChild(commandLine);
 
-                    // Respuesta del comando
+                    // Bloque de respuesta
                     const responseBlock = document.createElement("div");
                     responseBlock.className = "terminal-output";
 
                     switch (cmd) {
                         case "help":
+                        case "ayuda":
+                        case "menu":
                             responseBlock.innerHTML = `
                                 <p><strong>Comandos disponibles:</strong></p>
-                                <p>- <code>whoami</code>: Identidad del profesional.</p>
-                                <p>- <code>skills</code>: Resumen de habilidades clave.</p>
+                                <p>- <code>whoami</code>: Identidad y perfil profesional.</p>
+                                <p>- <code>skills</code>: Ir a habilidades técnicas y herramientas.</p>
                                 <p>- <code>projects</code>: Ir a la sección de proyectos personales.</p>
                                 <p>- <code>writeups</code>: Ir a la sección de writeups de máquinas.</p>
                                 <p>- <code>certs</code>: Ver certificaciones oficiales verificadas.</p>
                                 <p>- <code>education</code>: Formación académica y trayectoria.</p>
                                 <p>- <code>contact</code>: Información de contacto directo.</p>
                                 <p>- <code>cv</code>: Descargar Curriculum Vitae en PDF.</p>
-                                <p>- <code>clear</code>: Limpiar la consola de terminal.</p>
+                                <p>- <code>security</code>: Auditoría y políticas de seguridad activas.</p>
+                                <p>- <code>clear</code>: Limpiar la consola interactiva.</p>
                             `;
                             break;
 
@@ -3011,52 +3065,152 @@
                             break;
 
                         case "skills":
-                            responseBlock.innerHTML = "<p>Wireshark, Burp Suite, Splunk, Kali Linux, Windows Server, Active Directory, Linux, Cisco Packet Tracer, Azure, Entra ID, AWS, Python, Docker, MySQL.</p>";
+                        case "habilidades":
+                        case "stack":
+                        case "tecnologias":
+                        case "tecnologías":
+                        case "cd skills":
+                            responseBlock.innerHTML = "<p>Desplazando a habilidades... Herramientas clave: Wireshark, Burp Suite, Splunk, Kali Linux, Windows Server, Active Directory, Linux, Cisco Packet Tracer, Azure, Entra ID, AWS, Python, Docker, MySQL.</p>";
+                            navigateToSection("skills");
                             break;
 
                         case "certs":
                         case "certificaciones":
-                            responseBlock.innerHTML = "<p>Certificaciones: eJPTv2 (INE Security), Cisco CCST Cybersecurity, Microsoft SC-900, Azure AI Fundamentals, IT Specialist Cybersecurity. Verificables en Credly e INE.</p>";
+                        case "certificados":
+                        case "cert":
+                            responseBlock.innerHTML = "<p>Desplazando a certificaciones... eJPTv2 (INE Security), Cisco CCST Cybersecurity, Microsoft SC-900, Azure AI Fundamentals, IT Specialist Cybersecurity. Verificadas en Credly e INE.</p>";
+                            navigateToSection("education");
                             break;
 
                         case "projects":
-                            responseBlock.innerHTML = "<p>Redirigiendo a proyectos personales: github.com/alexitocvf16/Proyectos-Personales...</p>";
-                            window.location.hash = "#projects";
+                        case "proyectos":
+                        case "project":
+                        case "proyecto":
+                        case "mis proyectos":
+                        case "cd projects":
+                        case "cd proyectos":
+                        case "cat projects":
+                        case "ls projects":
+                        case "dir projects":
+                            responseBlock.innerHTML = `
+                                <p>Navegando a la sección de proyectos personales...</p>
+                                <p style="margin-top: 0.35rem;">
+                                    Repositorio en GitHub: 
+                                    <a href="https://github.com/alexitocvf16/Proyectos-Personales" target="_blank" rel="noopener noreferrer" style="color: var(--neon-cyan); text-decoration: underline; font-weight: 600;">
+                                        github.com/alexitocvf16/Proyectos-Personales ↗
+                                    </a>
+                                </p>
+                            `;
+                            navigateToSection("projects");
                             break;
 
                         case "education":
                         case "formacion":
-                            responseBlock.innerHTML = "<p>Redirigiendo a formación académica y certificaciones...</p>";
-                            window.location.hash = "#education";
+                        case "formación":
+                        case "trayectoria":
+                        case "estudios":
+                        case "cd education":
+                        case "cd formacion":
+                            responseBlock.innerHTML = "<p>Navegando a formación académica y trayectoria...</p>";
+                            navigateToSection("education");
                             break;
 
                         case "writeups":
+                        case "writeup":
                         case "machines":
+                        case "maquinas":
+                        case "máquinas":
                         case "ctf":
-                            responseBlock.innerHTML = "<p>Redirigiendo a Writeups &amp; Máquinas vulnerables resueltas (eJPTv2): github.com/alexitocvf16/Solved-machines...</p>";
-                            window.location.hash = "#writeups";
+                        case "solved-machines":
+                        case "cd writeups":
+                            responseBlock.innerHTML = `
+                                <p>Navegando a writeups de máquinas vulnerables (eJPTv2)...</p>
+                                <p style="margin-top: 0.35rem;">
+                                    Repositorio en GitHub: 
+                                    <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" rel="noopener noreferrer" style="color: var(--neon-cyan); text-decoration: underline; font-weight: 600;">
+                                        github.com/alexitocvf16/Solved-machines ↗
+                                    </a>
+                                </p>
+                            `;
+                            navigateToSection("writeups");
                             break;
 
                         case "contact":
-                            responseBlock.innerHTML = "<p>Email: sanchezalexmoreno16@gmail.com | LinkedIn: linkedin.com/in/alexitosm16 | GitHub: github.com/alexitocvf16 | Credly: credly.com/users/alex16</p>";
+                        case "contacto":
+                        case "email":
+                        case "correo":
+                        case "cd contact":
+                            responseBlock.innerHTML = "<p>Navegando a canales de contacto... Email: sanchezalexmoreno16@gmail.com | LinkedIn: linkedin.com/in/alexitosm16 | GitHub: github.com/alexitocvf16 | Credly: credly.com/users/alex16</p>";
+                            navigateToSection("contact");
                             break;
 
                         case "cv":
-                            responseBlock.innerHTML = "<p>Abriendo curriculum... <a href='Curriculum.pdf' target='_blank' style='color: var(--neon-green);'>[Descargar Curriculum.pdf]</a></p>";
+                        case "curriculum":
+                        case "currículum":
+                        case "resume":
+                            responseBlock.innerHTML = "<p>Abriendo curriculum... <a href='Curriculum.pdf' target='_blank' rel='noopener noreferrer' style='color: var(--neon-green); font-weight: 600;'>[Descargar Curriculum.pdf ↗]</a></p>";
+                            window.open("Curriculum.pdf", "_blank", "noopener,noreferrer");
+                            break;
+
+                        case "github":
+                        case "repo":
+                        case "repos":
+                            responseBlock.innerHTML = `
+                                <p>Perfiles y repositorios en GitHub:</p>
+                                <p>- Proyectos Personales: <a href="https://github.com/alexitocvf16/Proyectos-Personales" target="_blank" rel="noopener noreferrer" style="color: var(--neon-cyan);">github.com/alexitocvf16/Proyectos-Personales ↗</a></p>
+                                <p>- Solved Machines: <a href="https://github.com/alexitocvf16/Solved-machines" target="_blank" rel="noopener noreferrer" style="color: var(--neon-cyan);">github.com/alexitocvf16/Solved-machines ↗</a></p>
+                            `;
+                            break;
+
+                        case "security":
+                        case "hardening":
+                        case "status":
+                            responseBlock.innerHTML = "<p style='color: var(--neon-cyan);'>[SECURITY HARDENING]: CSP estricto activo, noopener/noreferrer en el 100% de enlaces externos, terminal sanitizada con textContent y protección contra reverse tabnabbing.</p>";
                             break;
 
                         case "sudo":
                         case "sudo su":
-                            responseBlock.innerHTML = "<p style='color: var(--neon-red);'>[ALERTA DE SEGURIDAD]: Intento de escalada registrado en syslog. Usuario no está en el archivo sudoers. Este incidente será reportado.</p>";
+                            responseBlock.innerHTML = "<p style='color: var(--neon-red);'>[ALERTA DE SEGURIDAD]: Intento de escalada registrado en syslog local. Usuario no está en el archivo sudoers. Este incidente ha sido registrado.</p>";
+                            break;
+
+                        case "xss":
+                        case "<script>":
+                        case "alert(1)":
+                            responseBlock.innerHTML = "<p style='color: var(--neon-cyan);'>[WAF / DEFENSE]: Intento de payload neutralizado automáticamente por renderizado DOM seguro (textContent).</p>";
+                            break;
+
+                        case "sqli":
+                        case "' or 1=1--":
+                        case "' or '1'='1":
+                            responseBlock.innerHTML = "<p style='color: var(--neon-cyan);'>[IDS / DEFENSE]: Intento de SQL Injection detectado. Arquitectura estática sin base de datos en frontend.</p>";
+                            break;
+
+                        case "cat /etc/passwd":
+                        case "/etc/passwd":
+                            responseBlock.innerHTML = "<p style='color: var(--neon-red);'>[ACCESS DENIED]: Permisos insuficientes (chmod 000). Acceso restringido por directivas de seguridad.</p>";
                             break;
 
                         case "clear":
+                        case "cls":
                             terminalOutput.innerHTML = "";
                             return;
 
-                        default:
-                            responseBlock.innerHTML = `<p style="color: var(--neon-red);">bash: comando no encontrado: '${escapeHTML(cmd)}'. Escribe <code>help</code> para ver opciones.</p>`;
+                        default: {
+                            // Creación segura de mensaje de error mediante DOM sin concatenar HTML inseguro
+                            const errP = document.createElement("p");
+                            errP.style.color = "var(--neon-red)";
+                            errP.appendChild(document.createTextNode("bash: comando no encontrado: '"));
+                            const codeEl = document.createElement("code");
+                            codeEl.textContent = rawInput; // Inmune a XSS
+                            errP.appendChild(codeEl);
+                            errP.appendChild(document.createTextNode("'. Escribe "));
+                            const helpEl = document.createElement("code");
+                            helpEl.textContent = "help";
+                            errP.appendChild(helpEl);
+                            errP.appendChild(document.createTextNode(" para ver opciones."));
+                            responseBlock.appendChild(errP);
                             break;
+                        }
                     }
 
                     terminalOutput.appendChild(responseBlock);
@@ -3065,22 +3219,17 @@
             });
         }
 
-        // Función para evitar inyección en terminal interactiva
-        function escapeHTML(str) {
-            return str.replace(/[&<>'"]/g,
-                tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
-            );
-        }
-
         // =================================================================
-        // BOTÓN COPIAR HUELLA PGP
+        // BOTÓN COPIAR HUELLA PGP (CON GESTIÓN SEGURA Y FALLBACK)
         // =================================================================
         const copyPgpBtn = document.getElementById("copyPgpBtn");
         const pgpKeyText = document.getElementById("pgpKeyText");
 
         if (copyPgpBtn && pgpKeyText) {
             copyPgpBtn.addEventListener("click", () => {
-                navigator.clipboard.writeText(pgpKeyText.innerText).then(() => {
+                const textToCopy = pgpKeyText.innerText.trim();
+
+                const onSuccess = () => {
                     const originalText = copyPgpBtn.innerText;
                     copyPgpBtn.innerText = "¡COPIADO!";
                     copyPgpBtn.style.borderColor = "var(--neon-green)";
@@ -3091,10 +3240,35 @@
                         copyPgpBtn.style.borderColor = "";
                         copyPgpBtn.style.color = "";
                     }, 2000);
-                });
-            });
-        }
+                };
 
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(textToCopy)
+                        .then(onSuccess)
+                        .catch(() => fallbackCopyText(textToCopy, onSuccess));
+                } else {
+                    fallbackCopyText(textToCopy, onSuccess);
+                }
+            });
+
+            function fallbackCopyText(text, callback) {
+                try {
+                    const tempTextArea = document.createElement("textarea");
+                    tempTextArea.value = text;
+                    tempTextArea.style.position = "fixed";
+                    tempTextArea.style.left = "-9999px";
+                    tempTextArea.setAttribute("readonly", "");
+                    document.body.appendChild(tempTextArea);
+                    tempTextArea.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(tempTextArea);
+                    if (callback) callback();
+                } catch (e) {
+                    console.warn("No se pudo copiar automáticamente al portapapeles:", e);
+                }
+            }
+        }
+        
         // =================================================================
         // MENÚ MÓVIL (HAMBURGUESA)
         // =================================================================
