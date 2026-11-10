@@ -333,8 +333,9 @@ main, .footer { position: relative; z-index: 1; }
   font-size: 0.9rem;
 }
 .id-card__list div:last-child { border-bottom: 0; }
-.id-card__list dt { color: var(--dim); }
+.id-card__list dt { color: var(--dim); white-space: nowrap; }
 .id-card__list dd { margin: 0; text-align: right; color: var(--text); font-weight: 500; }
+.id-card__list dd small { display: block; color: var(--muted); font-weight: 400; font-size: 0.8rem; }
 .id-card__foot {
   display: flex; align-items: center; gap: 10px;
   margin-top: 10px;
