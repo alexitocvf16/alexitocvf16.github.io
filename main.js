@@ -296,7 +296,7 @@
         lines([
           "Alejandro Sánchez Moreno",
           "Administrador de sistemas y técnico de ciberseguridad · 2º ASIR",
-          "Toledo, España · carnet B y coche propio · disponibilidad inmediata"
+          "Toledo, España · carnet B · disponibilidad inmediata"
         ]);
       },
       skills: function () {
