@@ -314,7 +314,10 @@
           "CCST Cybersecurity ................ Cisco",
           "SC-900 ............................ Microsoft",
           "Azure AI Fundamentals ............. Microsoft",
-          "IT Specialist · Cybersecurity ..... Certiport"
+          "IT Specialist · Cybersecurity ..... Certiport",
+          "AI Fundamentals ................... IBM SkillsBuild",
+          "BTL1 .............................. en preparación",
+          "Introducción a Splunk (SIEM) ...... curso"
         ]);
         go("certificaciones");
       },
