@@ -24,8 +24,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261110b">
-  <script defer src="main.js?v=20261110b"></script>
+  <link rel="stylesheet" href="styles.css?v=20261110c">
+  <script defer src="main.js?v=20261110c"></script>
 </head>
 
 <body>
@@ -317,11 +317,62 @@
             <h2 class="sec-head__title">Webs seguras, automatizaciones y agentes de IA</h2>
           </div>
           <p class="sec-head__lede">
-            Con mi marca <strong>Grootitech</strong> desarrollo webs y aplicaciones a medida con despliegue seguro
+            Con mi marca <strong>Grootitech</strong> desarrollo webs y aplicaciones a medida, para mí y para clientes, con despliegue seguro
             (TLS y cabeceras de seguridad), monto <strong>n8n</strong> conectado con Gmail, WhatsApp o Telegram y
             creo <strong>agentes de IA</strong> que atienden a clientes y hacen tareas con sus herramientas.
           </p>
         </header>
+
+        <article class="card showcase reveal">
+          <div class="showcase__body">
+            <div class="project__meta">
+              <span class="tag">Producto propio · CRM para negocios</span>
+              <span class="live mono"><span class="pulse" aria-hidden="true"></span>En línea</span>
+            </div>
+            <h3 class="showcase__title">Grooti CRM</h3>
+            <p class="project__desc">
+              Mi propio CRM para negocios con citas: agenda, clientes, cobros y reservas online en una sola pantalla.
+              Se paga una vez y se instala en el servidor y con el dominio del cliente, así que los datos son suyos.
+              Tiene una demo completa con ocho sectores para probarlo sin registrarse.
+            </p>
+            <ul class="showcase__list">
+              <li>Agenda por profesional con citas, estados y huecos libres</li>
+              <li>Fichas de clientes, bonos y caja con cobros pendientes</li>
+              <li>Reservas online desde el móvil que entran solas en la agenda</li>
+              <li>Recordatorios automáticos por correo o WhatsApp y asistente de IA</li>
+            </ul>
+            <ul class="stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>n8n</li><li>Nginx</li><li>CSP estricta</li></ul>
+            <a class="btn btn--primary btn--sm showcase__cta" href="https://tucrm.grootitech.es/" target="_blank" rel="noopener noreferrer">Ver la web y la demo ↗</a>
+          </div>
+          <a class="showcase__shot" href="https://tucrm.grootitech.es/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+            <img src="images/grooticrm-panel.webp" alt="" width="1400" height="860" loading="lazy">
+          </a>
+        </article>
+
+        <article class="card showcase showcase--flip reveal">
+          <div class="showcase__body">
+            <div class="project__meta">
+              <span class="tag">Web para cliente · Taxi en Toledo</span>
+              <span class="live mono"><span class="pulse" aria-hidden="true"></span>En línea</span>
+            </div>
+            <h3 class="showcase__title">Taxi Toledo 55</h3>
+            <p class="project__desc">
+              Web de un taxista de Toledo con licencia nº 55 y taxi de 1 a 8 plazas: servicios, horarios, tarifas y
+              viajes por España, con reservas que le llegan al correo y pasan a su calendario sin apuntar nada.
+            </p>
+            <ul class="showcase__list">
+              <li>Formulario de reserva por trayecto o por días, con presupuesto orientativo opcional</li>
+              <li>Cada reserva llega por correo con botones para aceptarla o rechazarla</li>
+              <li>Al aceptarla se crea el evento en Google Calendar y se confirma por WhatsApp</li>
+              <li>Si el envío falla, la reserva sale por WhatsApp con los datos ya escritos</li>
+            </ul>
+            <ul class="stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>n8n</li><li>Google Calendar</li><li>Nginx</li><li>CSP estricta</li></ul>
+            <a class="btn btn--primary btn--sm showcase__cta" href="https://taxitoledo55.com/" target="_blank" rel="noopener noreferrer">Ver la web ↗</a>
+          </div>
+          <a class="showcase__shot" href="https://taxitoledo55.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+            <img src="images/taxitoledo55-inicio.webp" alt="" width="1400" height="860" loading="lazy">
+          </a>
+        </article>
 
         <article class="card showcase reveal">
           <div class="showcase__body">
@@ -384,7 +435,7 @@
             Writeups paso a paso de máquinas de <strong>DockerLabs</strong>, <strong>HackMyVM</strong> y
             <strong>HackerLabs</strong>: reconocimiento con Nmap, explotación de vectores web (LFI, RCE, bypass de
             autenticación), escalada de privilegios en Linux y post-explotación, con la metodología de la
-            certificación eJPTv2.
+            certificación eJPTv2. También análisis forense de tráfico desde el lado del <strong>Blue Team</strong>.
           </p>
         </header>
 
@@ -395,6 +446,12 @@
             <span role="columnheader">Técnicas</span>
             <span role="columnheader">Estado</span>
           </div>
+          <a class="ops__row" role="row" href="https://github.com/alexitocvf16/Solved-machines/blob/main/M%C3%A1quina%20analyst/Analyst.md" target="_blank" rel="noopener noreferrer">
+            <span class="ops__plat mono" role="cell">DockerLabs</span>
+            <span class="ops__name" role="cell">Analyst</span>
+            <span class="ops__desc" role="cell">Blue Team: análisis forense de un .pcap con Wireshark para reconstruir el ataque, desde la subida de una webshell con doble extensión hasta la reverse shell y la escalada con sudo.</span>
+            <span class="ops__state mono ops__state--blue" role="cell">análisis ✓</span>
+          </a>
           <a class="ops__row" role="row" href="https://github.com/alexitocvf16/Solved-machines/blob/main/Maquina%20sedition%20hackerlabs/M%C3%A1quina%20Sedition%20Hackerlabs.md" target="_blank" rel="noopener noreferrer">
             <span class="ops__plat mono" role="cell">HackerLabs</span>
             <span class="ops__name" role="cell">Sedition</span>
